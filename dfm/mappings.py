@@ -27,7 +27,7 @@ class FSMappingBase(ConditionalCallable):
         return osp.realpath(osp.join(FSMappingBase.BASEPATH_SRC, path))
 
     def _get_path_dst(self, path):
-        return sop.realpath(osp.join(FSMappingBase.BASEPATH_DST, path))
+        return osp.join(FSMappingBase.BASEPATH_DST, path)
 
     def _make_dir_of_file(self, file):
         if not osp.isdir(osp.dirname(file)):

@@ -43,14 +43,14 @@ __commands__ = commands.Commands('/',
     commands.Command(install_ohmyzsh, desc='Install oh-my-zsh'),
     commands.Command('~/.fzf/install', desc='Install fzf'),
 
-    commands.Commands('scripts/',
-        commands.Command('install-linux.sh', desc='Install system utilities'),
+    commands.Commands('',
+        commands.Command('scripts/install-linux.sh', desc='Install system utilities'),
         filters=[filters.LinuxFilter()]
     ),
 
-    commands.Commands('scripts/',
+    commands.Commands('',
         commands.Command(install_homebrew, desc='Install HomeBrew'),
-        commands.Command('install-osx.sh', desc='Install system utilities'),
+        commands.Command('scripts/install-osx.sh', desc='Install system utilities'),
         filters=[filters.OSXFilter()]
     ),
 

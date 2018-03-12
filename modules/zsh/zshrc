@@ -91,3 +91,4 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/.bin:$PATH
 
+echo "$terminfo[bold]$fg[blue]#$fg[cyan]「浮世高台我独上 / 回首犹记秋晴望 / 从来山川岁月 / 心乡是我乡」$reset_color"

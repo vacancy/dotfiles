@@ -7,13 +7,14 @@
 # This file is part of dotfiles.
 
 import six
+import os.path as osp
 import platform
 
 from .logging import get_logger
 
 logger = get_logger(__file__)
 
-__all__ = ['Filter', 'PlatformFilter', 'OSXFilter', 'LinuxFilter', 'ConditionalCallable']
+__all__ = ['Filter', 'PlatformFilter', 'OSXFilter', 'LinuxFilter', 'NotExists', 'ConditionalCallable']
 
 
 class Filter(object):
@@ -43,6 +44,16 @@ class OSXFilter(PlatformFilter):
 class LinuxFilter(PlatformFilter):
     def __init__(self):
         super(LinuxFilter, self).__init__('Linux')
+
+
+class NotExists(Filter):
+    def __init__(self, file):
+        self.file = file
+        if self.file.startswith('~'):
+            self.file = osp.expanduser(self.file)
+
+    def eval(self):
+        return osp.exists(self.file)
 
 
 class ConditionalCallable(object):

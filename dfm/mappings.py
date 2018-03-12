@@ -40,16 +40,23 @@ class FSMappingBase(ConditionalCallable):
 
 
 class Copy(FSMappingBase):
-    def __init__(self, file, dest, follow_symlinks=False, *, desc=None, filters=None):
+    def __init__(self, file, dest, overwrite=True, follow_symlinks=False, *, desc=None, filters=None):
         super(Copy, self).__init__(desc=desc, filters=filters)
 
         self.file = file
         self.dest = dest
+        self.overwrite = overwrite
         self.follow_symlinks = follow_symlinks
 
     def eval(self):
         file = self._get_path_src(self.file)
         dest = self._get_path_dst(self.dest)
+
+        if osp.exists(dest):
+            if not self.overwrite:
+                logger.warning('  Skip existing file: "{}".'.format(dest))
+            else:
+                logger.warning('  Overwriting existing file: "{}".'.format(dest))
 
         self._make_dir_of_file(dest)
 

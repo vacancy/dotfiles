@@ -1,5 +1,5 @@
 #!/bin/bash
 
-[ -f ~/.dotfiles ] && git clone --recursive https://github.com/vacancy/dotfiles ~/.dotfiles
+[ -f ~/.dotfiles ] || git clone --recursive https://github.com/vacancy/dotfiles ~/.dotfiles
 ~/.dotfiles/bin/dfm-install
 

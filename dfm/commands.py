@@ -7,6 +7,7 @@
 # This file is part of dotfiles.
 
 import six
+import os
 import os.path as osp
 import subprocess
 import contextlib
@@ -40,16 +41,27 @@ class Command(CommandBase):
         cwd = self._get_working_dir(self.cwd)
         logger.info('  Execute (cwd: "{}"): {}'.format(cwd, self.cmd))
         if isinstance(cmd, six.string_types):
-            cmd = cmd.split()
-        subprocess.check_call(cmd, cwd=cwd)
+            backup = os.getcwd()
+            os.chdir(cwd)
+            os.system(cmd)
+            os.chdir(backup)
+        else:
+            subprocess.check_call(cmd, cwd=cwd)
 
 
 class Commands(CommandBase):
-    def __init__(self, cwd, *args, filters=None):
+    def __init__(self, cwd, *args, title=None, filters=None):
         super(Commands, self).__init__(cwd=cwd, filters=filters)
+        self.title = title
         self.modules = args
 
+    def extends(self, modules):
+        self.modules.extend(modules)
+
     def eval(self):
+        if self.title is not None:
+            logger.info('  ' + self.title)
+
         if self.cwd != '/':
             with append_dir(self.cwd):
                 for m in self.modules:

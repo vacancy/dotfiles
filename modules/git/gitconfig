@@ -2,9 +2,10 @@
   name = Jiayuan Mao
   email = maojiayuan@gmail.com
 [core]
+  excludesfile = ~/.gitignore_global
+  editor = nano
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  excludesfile = ~/.gitignore_global
 [apply]
   whitespace = fix
 [branch "master"]
@@ -29,5 +30,7 @@
   default = simple
 [merge]
   log = true
-[rerere]
-  enabled = 1
+[credential]
+	# Enable HTTP(S) auth credential caching
+	# for 60 seconds (requires git 1.7.9+)
+	helper = cache --timeout 3600

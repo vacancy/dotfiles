@@ -1,6 +1,7 @@
 # Development environment
 /.idea/
 .DS_Store
+.*.s[a-w][a-z]
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

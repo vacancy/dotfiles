@@ -32,6 +32,11 @@ class FSMappingBase(ConditionalCallable):
     def _make_dir_of_file(self, file):
         if not osp.isdir(osp.dirname(file)):
             os.makedirs(osp.dirname(file), exist_ok=True)
+        if osp.exists(file):
+            if osp.isdir(file):
+                shutil.rmtree(file, ignore_errors=True)
+            if osp.isfile(file):
+                os.remove(file)
 
 
 class Copy(FSMappingBase):

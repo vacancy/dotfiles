@@ -1,5 +1,5 @@
 #!/bin/bash
 
-git clone --recursive https://github.com/vacancy/dotfiles ~/.dotfiles
-~/.dotfiles/bin/dpm-install
+[ -f ~/.dotfiles ] && git clone --recursive https://github.com/vacancy/dotfiles ~/.dotfiles
+~/.dotfiles/bin/dfm-install
 

@@ -12,7 +12,7 @@ import os.path as osp
 import argparse
 
 parser = argparse.ArgumentParser('DFM-Install')
-parser.add_argument('--prefix', default='.')
+parser.add_argument('--prefix', default=osp.expanduser('~'))
 parser.add_argument('--no-mappings', action='store_true')
 parser.add_argument('--no-commands', action='store_true')
 args = parser.parse_args()
@@ -37,7 +37,7 @@ def main():
 
     if not args.no_commands:
         import dfm.commands as commands
-        with commands.change_dir(args.prefix):
+        with commands.change_dir(args.module_dir):
             configs.__commands__()
 
 

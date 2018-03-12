@@ -27,7 +27,9 @@ class CommandBase(ConditionalCallable):
         super(CommandBase, self).__init__(desc=desc, filters=filters)
         self.cwd = cwd
 
-    def _get_working_dir(self ,cwd):
+    def _get_working_dir(self, cwd):
+        if cwd == '/':
+            return CommandBase.BASEPATH_CWD
         return osp.join(CommandBase.BASEPATH_CWD, cwd)
 
 

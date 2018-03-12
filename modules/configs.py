@@ -42,7 +42,7 @@ install_homebrew = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent
 
 __commands__ = commands.Commands('/',
     commands.Command(install_ohmyzsh, desc='Install oh-my-zsh'),
-    commands.Command('~/.fzf/install', desc='Install fzf'),
+    commands.Command('~/.fzf/install --key-bindings --completion --no-update-rc', desc='Install fzf'),
 
     commands.Commands('',
         commands.Command('scripts/install-linux.sh', desc='Install system utilities'),

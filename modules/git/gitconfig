@@ -8,9 +8,6 @@
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [apply]
   whitespace = fix
-[branch "master"]
-  remote = origin
-  merge = refs/heads/master
 [color]
   ui = auto
 [color "branch"]

@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# File   : dfm-install
+# Author : Jiayuan Mao
+# Email  : maojiayuan@gmail.com
+# Date   : 12/03/2018
+#
+# This file is part of dotfiles.
+
+import sys
+import os.path as osp
+import argparse
+
+parser = argparse.ArgumentParser('DFM-Install')
+parser.add_argument('--prefix', default='.')
+args = parser.parse_args()
+
+args.root_dir = osp.dirname(osp.dirname(osp.realpath(__file__)))
+args.module_dir = osp.join(args.root_dir, 'modules')
+sys.path.insert(0, args.root_dir)
+
+
+def load_config():
+    import imp
+    return imp.load_source('configs', osp.join(args.module_dir, 'configs.py'))
+
+
+def main():
+    configs = load_config()
+
+    import dfm.mappings as mappings
+    with mappings.change_dir(args.module_dir, args.prefix):
+        configs.__mappings__()
+
+    import dfm.commands as commands
+    with commands.change_dir(args.prefix):
+        configs.__commands__()
+
+
+if __name__ == '__main__':
+    main()

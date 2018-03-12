@@ -2,7 +2,7 @@
 
 set -e -x
 
-ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/../ && pwd )"
-cd $ROOT
+ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $(readlink $ROOT)
 git pull --rebase --stat origin master
 

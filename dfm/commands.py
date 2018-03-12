@@ -23,8 +23,8 @@ __all__ = ['Command', 'Commands']
 class CommandBase(ConditionalCallable):
     BASEPATH_CWD = '/'
 
-    def __init__(self, cwd='/', filters=None):
-        super(CommandBase, self).__init__(filters=filters)
+    def __init__(self, cwd='/', desc=None, filters=None):
+        super(CommandBase, self).__init__(desc=desc, filters=filters)
         self.cwd = cwd
 
     def _get_working_dir(self ,cwd):
@@ -32,8 +32,8 @@ class CommandBase(ConditionalCallable):
 
 
 class Command(CommandBase):
-    def __init__(self, cmd, cwd='/', filters=None):
-        super(Command, self).__init__(cwd=cwd, filters=filters)
+    def __init__(self, cmd, cwd='/', desc=None, filters=None):
+        super(Command, self).__init__(cwd=cwd, desc=desc, filters=filters)
         self.cmd = cmd
 
     def eval(self):
@@ -50,18 +50,14 @@ class Command(CommandBase):
 
 
 class Commands(CommandBase):
-    def __init__(self, cwd, *args, title=None, filters=None):
-        super(Commands, self).__init__(cwd=cwd, filters=filters)
-        self.title = title
-        self.modules = args
+    def __init__(self, cwd, *args, desc=None, filters=None):
+        super(Commands, self).__init__(cwd=cwd, desc=desc, filters=filters)
+        self.modules = list(args)
 
     def extends(self, modules):
         self.modules.extend(modules)
 
     def eval(self):
-        if self.title is not None:
-            logger.info('  ' + self.title)
-
         if self.cwd != '/':
             with append_dir(self.cwd):
                 for m in self.modules:

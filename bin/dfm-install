@@ -13,6 +13,8 @@ import argparse
 
 parser = argparse.ArgumentParser('DFM-Install')
 parser.add_argument('--prefix', default='.')
+parser.add_argument('--no-mappings', action='store_true')
+parser.add_argument('--no-commands', action='store_true')
 args = parser.parse_args()
 
 args.root_dir = osp.dirname(osp.dirname(osp.realpath(__file__)))
@@ -28,13 +30,15 @@ def load_config():
 def main():
     configs = load_config()
 
-    import dfm.mappings as mappings
-    with mappings.change_dir(args.module_dir, args.prefix):
-        configs.__mappings__()
+    if not args.no_mappings:
+        import dfm.mappings as mappings
+        with mappings.change_dir(args.module_dir, args.prefix):
+            configs.__mappings__()
 
-    import dfm.commands as commands
-    with commands.change_dir(args.prefix):
-        configs.__commands__()
+    if not args.no_commands:
+        import dfm.commands as commands
+        with commands.change_dir(args.prefix):
+            configs.__commands__()
 
 
 if __name__ == '__main__':

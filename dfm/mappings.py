@@ -35,8 +35,8 @@ class FSMappingBase(ConditionalCallable):
 
 
 class Copy(FSMappingBase):
-    def __init__(self, file, dest, follow_symlinks=False, *, filters=None):
-        super(Copy, self).__init__(filters=filters)
+    def __init__(self, file, dest, follow_symlinks=False, *, desc=None, filters=None):
+        super(Copy, self).__init__(desc=desc, filters=filters)
 
         self.file = file
         self.dest = dest
@@ -59,8 +59,8 @@ class Copy(FSMappingBase):
 
 
 class Link(FSMappingBase):
-    def __init__(self, file, dest, relative=False, *, filters=None):
-        super(Link, self).__init__(filters=filters)
+    def __init__(self, file, dest, relative=False, *, desc=None, filters=None):
+        super(Link, self).__init__(desc=desc, filters=filters)
 
         self.file = file
         self.dest = dest
@@ -84,8 +84,8 @@ class Link(FSMappingBase):
 
 
 class FSMappings(FSMappingBase):
-    def __init__(self, directory, *args, filters=None, directory_dest=''):
-        super(FSMappings, self).__init__(filters=filters)
+    def __init__(self, directory, *args, desc=None, filters=None, directory_dest=''):
+        super(FSMappings, self).__init__(desc=desc, filters=filters)
         self.directory = directory.strip()
         self.directory_dest = directory_dest.strip()
         self.modules = args

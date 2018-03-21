@@ -20,3 +20,11 @@ export LC_ALL=en_US.UTF-8
 
 export GCC_COLORS=1
 export CLICOLOR=1
+
+# Python related
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/projects/Jacinle/bin:$PATH
+
+# Go related
+export GOPATH=$HOME/go
+export PATH=$HOME/Go/bin:$PATH

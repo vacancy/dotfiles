@@ -1,8 +1,11 @@
+# For homebrew
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export PATH=/usr/local/sbin:$PATH
+
+# For local python packages
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/Projects/Jacinle/bin:$PATH
 
 # GO related
 export GOPATH=$HOME/Projects/Go
 export PATH=$HOME/Projects/Go/bin:$PATH
-

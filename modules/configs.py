@@ -37,11 +37,10 @@ __mappings__ = mappings.FSMappings('/',
     desc='Config binary executable.'),
 )
 
-install_ohmyzsh = 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 install_homebrew = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
 __commands__ = commands.Commands('/',
-    commands.Command(install_ohmyzsh, desc='Install oh-my-zsh'),
+    commands.Command('zsh/install.sh', desc='Install oh-my-zsh'),
     commands.Command('~/.fzf/install --key-bindings --completion --no-update-rc', desc='Install fzf'),
 
     commands.Commands('',
@@ -51,6 +50,7 @@ __commands__ = commands.Commands('/',
 
     commands.Commands('',
         commands.Command(install_homebrew, desc='Install HomeBrew'),
+        commands.Command('brew tap caskroom/cask', desc='Install HomeBrew Cask'),
         commands.Command('scripts/install-osx.sh', desc='Install system utilities'),
         filters=[filters.OSXFilter()]
     ),

@@ -56,7 +56,10 @@ class Repo(object):
 
     @property
     def remote(self):
-        return cli_eval('git remote -v get-url origin', cwd=self.path)
+        try:
+            return cli_eval('git remote -v get-url origin', cwd=self.path)
+        except subprocess.CalledProcessError:
+            return '<null>'
 
     @property
     def last_update(self):

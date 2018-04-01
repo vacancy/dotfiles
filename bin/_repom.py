@@ -37,6 +37,9 @@ parser_status = subparsers.add_parser('status', help='Show states of repos.')
 parser_status.set_defaults(action='status')
 parser_status.add_argument('--all', action='store_true')
 
+parser_status = subparsers.add_parser('upgrade', help='Upgrade all repos.')
+parser_status.set_defaults(action='upgrade')
+
 parser_find = subparsers.add_parser('find', help='Find to a repo')
 parser_find.set_defaults(action='find')
 parser_find.add_argument('repo')
@@ -86,7 +89,11 @@ class Repo(object):
             ))
 
     def exec(self, cmd):
-        return cli_exec(cmd, cwd=self.path)
+        try:
+            return cli_exec(cmd, cwd=self.path)
+        except subprocess.CalledProcessError as e:
+            print('Error executing: "{}" at "".'.format(cmd, self.path))
+            print(e)
 
     def go(self):
         print_out('cd {}'.format(self.path))
@@ -151,6 +158,12 @@ def main():
                 repo.print()
                 print('-' * 50)
                 repo.exec('git status')
+    elif args.action == 'upgrade':
+        for repo in repos:
+            print('-' * 50)
+            repo.print()
+            print('-' * 50)
+            repo.exec('git pull')
     elif args.action == 'find':
         repo = repos.find(args.repo)
     elif args.action == 'go':

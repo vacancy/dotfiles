@@ -107,7 +107,8 @@ Plugin 'derekwyatt/vim-protodef'  " Converting .h to .cpp
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'scrooloose/nerdcommenter'  " Comment
 Plugin 'majutsushi/tagbar'  " Tag list
-Plugin 'Valloric/YouCompleteMe' Plugin 'rizzatti/dash.vim'
+Plugin 'Valloric/YouCompleteMe' 
+Plugin 'rizzatti/dash.vim'
 
 " Search and editing
 Plugin 'Lokaltog/vim-easymotion'  " Quick cursor jumping

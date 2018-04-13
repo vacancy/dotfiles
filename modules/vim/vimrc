@@ -61,7 +61,7 @@ set selectmode=mouse,key
 " <<
 
 " 让配置变更立即生效
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " >>
 " 其他
@@ -114,11 +114,7 @@ Plugin 'derekwyatt/vim-protodef'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'gcmt/wildfire.vim'
-"Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'suan/vim-instant-markdown'
-"Plugin 'lilydjwg/fcitx.vim'
-
 Plugin 'rizzatti/dash.vim'
 
 " 插件列表结束
@@ -128,9 +124,7 @@ filetype plugin indent on
 
 " 配色方案
 set background=dark
-"colorscheme solarized
 colorscheme molokai
-"colorscheme phd
 
 " >>
 " 营造专注气氛
@@ -174,6 +168,9 @@ set number
 " 高亮显示当前行/列
 set cursorline
 set cursorcolumn
+
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " 高亮显示搜索结果
 set hlsearch
@@ -506,7 +503,7 @@ map <C-S-Tab> :MBEbp<cr>
 set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
 
 " 保存 undo 历史。必须先行创建 .undo_history/
-set undodir=~/.undo_history/
+set undodir=~/.vim/undo_history/
 set undofile
 
 " 保存快捷键
@@ -518,10 +515,6 @@ map <leader>ss :mksession! my.vim<cr>
 map <leader>rs :source my.vim<cr>
 
 " <<
- 
-" 设置快捷键实现一键编译及运行
-nmap <Leader>m :wa<CR> :cd build/<CR> :!rm -rf main<CR> :!cmake CMakeLists.txt<CR>:make<CR><CR> :cw<CR> :cd ..<CR>
-nmap <Leader>g :wa<CR>:cd build/<CR>:!rm -rf main<CR>:!cmake CMakeLists.txt<CR>:make<CR><CR>:cw<CR>:cd ..<CR>:!build/main<CR>
 
 " >>
 " 快速选中结对符内的文本
@@ -538,4 +531,3 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip"]
 " 调用 gundo 树
 nnoremap <Leader>ud :GundoToggle<CR>
 
-color delek

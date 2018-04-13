@@ -277,8 +277,10 @@ map  f <Plug>(easymotion-bd-w)                    " Move to word
 nmap f <Plug>(easymotion-overwin-w)
 
 " 快捷替换
-"let g:multi_cursor_next_key='<S-n>'
-"let g:multi_cursor_skip_key='<S-k>'
+let g:multi_cursor_start_word_key='<C-d>'
+let g:multi_cursor_next_key='<C-d>'
+highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
+highlight link multiple_cursors_visual Visual
 
 " 精准替换
 " 替换函数。参数说明：
@@ -318,8 +320,9 @@ source $VIMRUNTIME/ftplugin/man.vim
 " 定义:Man命令查看各类man信息的快捷键
 nmap <Leader>man :Man 3 <cword><CR>
 
-set undodir=~/.vim/undo_history/  " 保存 undo 历史。必须先行创建 .undo_history/
-set undofile
+" Disable the undo history
+" set undodir=~/.vim/undo_history/  " 保存 undo 历史。必须先行创建 .undo_history/
+" set undofile
 " 设置环境保存项
 set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
 " 保存快捷键

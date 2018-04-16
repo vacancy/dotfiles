@@ -6,7 +6,6 @@
 #
 # This file is part of dotfiles.
 
-import six
 import os
 import os.path as osp
 import subprocess
@@ -42,7 +41,7 @@ class Command(CommandBase):
         cmd = self.cmd
         cwd = self._get_working_dir(self.cwd)
         logger.info('  Execute (cwd: "{}"): {}'.format(cwd, self.cmd))
-        if isinstance(cmd, six.string_types):
+        if isinstance(cmd, str):
             backup = os.getcwd()
             os.chdir(cwd)
             os.system(cmd)

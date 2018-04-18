@@ -141,8 +141,8 @@ let g:indent_guides_guide_size=1            " 色块宽度
 " MiniBufExplorer
 autocmd vimenter * :MBEToggle
 map <leader>tbl :MBEToggle<cr>
-map <leader>t :MBEbn<cr>
-map <leader>T :MBEbp<cr>
+map <C-l> :MBEbf<cr>
+map <C-h> :MBEbb<cr>
 
 " FSwitch
 nmap <silent> <leader>sw :FSHere<cr>

@@ -340,4 +340,8 @@ nnoremap <leader>ud :GundoToggle<CR>
 colorscheme molokai
 " Change the color for comments.
 hi Comment ctermfg=246 guifg=#999999
-
+hi VisualNOS ctermbg=240
+hi Visual ctermbg=238
+hi Underlined ctermfg=246 cterm=underline
+hi StatusLine   ctermfg=246 ctermbg=253
+hi StatusLineNC ctermfg=246 ctermbg=232

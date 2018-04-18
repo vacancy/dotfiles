@@ -129,10 +129,6 @@ call vundle#end()
 filetype plugin indent on
 " <<<<
 
-" 配色方案
-set background=dark
-colorscheme molokai
-
 " Powerline
 let g:Powerline_colorscheme='solarized256'
 
@@ -338,4 +334,10 @@ map <leader>rs :source my.vim<cr>
 
 " 调用 gundo 树
 nnoremap <leader>ud :GundoToggle<CR>
+
+" 配色方案
+" set background=dark
+colorscheme molokai
+" Change the color for comments.
+hi Comment ctermfg=246 guifg=#999999
 

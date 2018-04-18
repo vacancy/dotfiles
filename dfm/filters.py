@@ -6,7 +6,6 @@
 #
 # This file is part of dotfiles.
 
-import six
 import os.path as osp
 import platform
 
@@ -27,7 +26,7 @@ class Filter(object):
 
 class PlatformFilter(Filter):
     def __init__(self, allows):
-        if isinstance(allows, six.string_types):
+        if isinstance(allows, str):
             allows = [allows]
         self.allows = [s.lower() for s in allows]
 

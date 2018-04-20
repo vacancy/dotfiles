@@ -109,6 +109,8 @@ Plugin 'scrooloose/nerdcommenter'  " Comment
 Plugin 'majutsushi/tagbar'  " Tag list
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'rizzatti/dash.vim'
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Search and editing
 Plugin 'Lokaltog/vim-easymotion'  " Quick cursor jumping
@@ -244,6 +246,10 @@ let g:ycm_cache_omnifunc=0                                           " 禁止缓
 let g:ycm_seed_identifiers_with_syntax=1                             " 语法关键字补全
 inoremap <leader>; <C-x><C-o>                                        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
 set completeopt-=preview                                             " 补全内容不以分割子窗口形式出现，只显示补全列表
+
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " NERD commenter
 let g:NERDSpaceDelims = 1

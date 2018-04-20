@@ -2,6 +2,10 @@ set +e +x
 
 export PATH=$HOME/anaconda3/bin:$PATH  # Hack:: manually add the PATH prefix
 
-conda create --name pytorch
-source activate pytorch
-conda install torchvision pytorch -c pytorch
+if [ -d $HOME/anaconda3/envs/pytorch ]
+then
+    conda env remove --name pytorch
+fi
+
+conda env create -f environment.yml -q
+

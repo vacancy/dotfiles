@@ -7,11 +7,15 @@
 #
 # This file is part of dotfiles.
 
+import six
 import sys
+import os
 import os.path as osp
 import time
 import glob
 import argparse
+import json
+import subprocess
 
 parser = argparse.ArgumentParser('DFM-Package')
 parser.add_argument('--prefix', default=osp.expanduser('~'))
@@ -21,6 +25,7 @@ subparsers = parser.add_subparsers()
 parser_install = subparsers.add_parser('install', help='Install pacakges.')
 parser_install.set_defaults(action='install')
 parser_install.add_argument('package')
+parser_install.add_argument('--upgrade', action='store_true')
 parser_install.add_argument('--no-mappings', action='store_true')
 parser_install.add_argument('--no-commands', action='store_true')
 
@@ -31,6 +36,7 @@ args = parser.parse_args()
 
 args.root_dir = osp.dirname(osp.dirname(osp.realpath(__file__)))
 args.package_dir = osp.join(args.root_dir, 'packages')
+args.installed_packages_file = osp.expanduser('~/.config/dfm-installed-packages.json')
 sys.path.insert(0, args.root_dir)
 
 
@@ -39,7 +45,26 @@ def load_package_config(root_dir):
     return imp.load_source('configs', osp.join(root_dir, 'configs.py'))
 
 
-def execute_config(configs):
+def load_installed_packages():
+    if osp.exists(args.installed_packages_file):
+        with open(args.installed_packages_file) as f:
+            return json.load(f)
+    return []
+
+
+def append_installed_packages(package):
+    installed_packages = load_installed_packages()
+    installed_packages.append(package)
+    with open(args.installed_packages_file, 'w') as f:
+        return json.dump(installed_packages, f)
+
+
+def execute_config(package_name, configs):
+    if hasattr(configs, '__dependencies__'):
+        print('Resolving dependencies for {}: {}.'.format(package_name, ', '.join(configs.__dependencies__)))
+        for package in configs.__dependencies__:
+            cli_exec(['dfm-package', 'install', package])
+
     if not args.no_mappings:
         import dfm.mappings as mappings
         with mappings.change_dir(args.package_dir, args.prefix):
@@ -52,26 +77,43 @@ def execute_config(configs):
 
 
 def main():
+    installed_packages = load_installed_packages()
+
     if args.action == 'install':
+        if args.package in installed_packages and not args.upgrade:
+            raise ValueError('Package {} has been installed. Use --upgrade to upgrade or re-install.'.format(args.package))
         package = osp.join(args.package_dir, args.package)
         if not osp.exists(package):
             raise ValueError('Unknown package: {}.'.format(args.package))
         config = load_package_config(package)
-        execute_config(config)
+        execute_config(args.package, config)
+        append_installed_packages(args.package)
     elif args.action == 'list':
         configs = glob.glob(osp.join(args.package_dir, '*', 'configs.py'))
         for config_file in sorted(configs):
-            print('{}: (Last update: {})'.format(
-                osp.basename(osp.dirname(config_file)), 
+            package_name = osp.basename(osp.dirname(config_file))
+            print('{}: (Last update: {}){}'.format(
+                package_name,
                 time.strftime(
                     '%Y-%m-%d %H:%M:%S', 
                     time.localtime(osp.getmtime(config_file))
-                )
+                ),
+                ' [Installed]' if package_name in installed_packages else ''
             ))
     elif args.action == 'help':
         parser.print_help()
     else:
         raise ValueError('Unknown action: {}.'.format(args.action))
+
+
+def cli_exec(command, *args, **kwargs):
+    if isinstance(command, six.string_types):
+        command = command.split()
+    try:
+        return subprocess.check_call(command, *args, **kwargs)
+    except Exception as e:
+        print(e)
+
 
 if __name__ == '__main__':
     main()

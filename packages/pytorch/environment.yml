@@ -1,0 +1,15 @@
+name: pytorch
+channels:
+ - conda-forge
+ - pytorch
+dependencies:
+  - python=3.6
+  - ipython
+  - six
+  - pyzmq
+  - numpy
+  - matplotlib
+  - h5py
+  - scipy
+  - torchvision
+  - pytorch

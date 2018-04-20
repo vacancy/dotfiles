@@ -3,7 +3,7 @@
 import dfm.mappings as mappings
 import dfm.commands as commands
 
-install_ycm = 'bash install.sh'
+install_command = 'bash install.sh'
 
 __mappings__ = mappings.FSMappings('/')
 

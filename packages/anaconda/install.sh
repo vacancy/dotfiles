@@ -7,5 +7,3 @@ bash $CONDAFILE -b
 rm $CONDAFILE
 echo "export PATH=$HOME/anaconda3/bin:$PATH" >> ~/.config/local_envs
 
-source ~/.zshrc
-

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# File   : repom
+# File   : repom.py
 # Author : Jiayuan Mao
 # Email  : maojiayuan@gmail.com
 # Date   : 29/03/2018
@@ -28,6 +28,10 @@ subparsers = parser.add_subparsers()
 parser_get = subparsers.add_parser('get', help='Get a repo from github.')
 parser_get.set_defaults(action='get')
 parser_get.add_argument('repo')
+
+parser_init = subparsers.add_parser('init', help='Init a repom.')
+parser_init.set_defaults(action='init')
+parser_init.add_argument('--project', default=None, help='Customized project name.')
 
 parser_list = subparsers.add_parser('list', help='List repos.')
 parser_list.set_defaults(action='list')
@@ -139,6 +143,22 @@ def find_projects(root):
     return repos
 
 
+def init_templates(dest):
+    tpl_root = osp.join(osp.dirname(__file__), 'repom', 'templates')
+    for tpl in os.listdir(tpl_root):
+        if tpl.startswith('template'):
+            with open(osp.join(tpl_root, tpl)) as f:
+                template = f.read()
+            kwargs = {
+                'project': args.project,
+            }
+            dest_tpl = '.vim-template:' + osp.splitext(tpl)[1]
+            dest_template = template.format(**kwargs)
+            print('  Init template: {} => {}'.format(tpl, dest_tpl))
+            with open(osp.join(dest, dest_tpl), 'w') as f:
+                f.write(dest_template)
+
+
 def main():
     root = locate_projects()
     repos = find_projects(root)
@@ -149,6 +169,12 @@ def main():
             print('Repo {} has been cloned to {}'.format(args.repo, dest))
         else:
             print('Repo {} already exists at {}'.format(args.repo, dest))
+    elif args.action == 'init':
+        dest = os.getcwd()
+        if args.project is None:
+            args.project = osp.basename(dest)
+        print('Init repo at {}; project name is {}.'.format(dest, args.project))
+        init_templates(dest)
     elif args.action == 'list':
         repos.print(short=args.short)
     elif args.action == 'status':

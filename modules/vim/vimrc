@@ -124,6 +124,8 @@ Plugin 'vim-scripts/vimprj'
 
 Plugin 'vim-scripts/DrawIt'
 
+Plugin 'aperezdc/vim-template'
+
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -281,6 +283,11 @@ let g:multi_cursor_start_word_key='<C-d>'
 let g:multi_cursor_next_key='<C-d>'
 highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
 highlight link multiple_cursors_visual Visual
+
+" Templates
+let g:templates_directory='$HOME/.vim/templates'
+let g:username='Jiayuan Mao'
+let g:email='maojiayuan@gmail.com'
 
 " 精准替换
 " 替换函数。参数说明：

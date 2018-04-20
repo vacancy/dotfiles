@@ -143,8 +143,8 @@ let g:indent_guides_guide_size=1            " 色块宽度
 " MiniBufExplorer
 autocmd vimenter * :MBEToggle
 map <leader>tbl :MBEToggle<cr>
-map <leader>t :MBEbn<cr>
-map <leader>T :MBEbp<cr>
+map <C-l> :MBEbf<cr>
+map <C-h> :MBEbb<cr>
 
 " FSwitch
 nmap <silent> <leader>sw :FSHere<cr>
@@ -181,7 +181,7 @@ nmap <leader>tfl :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 autocmd vimenter * NERDTree
 let NERDTreeWinSize=32             " 设置 NERDTree 子窗口宽度
-let NERDTreeWinPos="left"         "  设置 NERDTree 子窗口位置
+let NERDTreeWinPos="left"          " 设置 NERDTree 子窗口位置
 let NERDTreeShowHidden=1           " 显示隐藏文件
 let NERDTreeMinimalUI=1            " NERDTree 子窗口中不显示冗余帮助信息
 let NERDTreeAutoDeleteBuffer=1     " 删除文件时自动删除文件对应 buffer
@@ -236,8 +236,6 @@ let g:tagbar_sort=0           " 不按照字母顺序排序
 let g:tagbar_foldlevel=99     " 默认展开
 
 " YCM
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5      " 菜单
-highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900   " 选中项
 let g:ycm_complete_in_comments=1                                     " 补全功能在注释中同样有效
 let g:ycm_confirm_extra_conf=0                                       " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
 let g:ycm_collect_identifiers_from_tags_files=0                      " 开启 YCM 标签补全引擎
@@ -347,4 +345,9 @@ nnoremap <leader>ud :GundoToggle<CR>
 colorscheme molokai
 " Change the color for comments.
 hi Comment ctermfg=246 guifg=#999999
+hi VisualNOS ctermbg=240
+hi Visual ctermbg=238
+hi Underlined ctermfg=246 cterm=underline
+hi StatusLine   ctermfg=246 ctermbg=253
+hi StatusLineNC ctermfg=246 ctermbg=232
 

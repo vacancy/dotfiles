@@ -257,7 +257,7 @@ let g:snips_github="https://github.com/vacancy"
 
 let g:ultisnips_python_style="google"
 let g:ultisnips_python_quoting_style="single"
-let g:ultisnips_python_triple_quoting_style="single"
+let g:ultisnips_python_triple_quoting_style="double"
 
 " NERD commenter
 let g:NERDSpaceDelims = 1

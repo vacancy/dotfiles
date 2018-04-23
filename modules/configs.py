@@ -40,9 +40,6 @@ __mappings__ = mappings.FSMappings('/',
 install_homebrew = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
 __commands__ = commands.Commands('/',
-    commands.Command('zsh/install.sh', desc='Install oh-my-zsh'),
-    commands.Command('~/.fzf/install --key-bindings --completion --no-update-rc', desc='Install fzf'),
-
     commands.Commands('',
         commands.Command('scripts/install-linux.sh', desc='Install system utilities'),
         filters=[filters.LinuxFilter()]
@@ -54,6 +51,9 @@ __commands__ = commands.Commands('/',
         commands.Command('scripts/install-osx.sh', desc='Install system utilities'),
         filters=[filters.OSXFilter()]
     ),
+
+    commands.Command('zsh/install.sh', desc='Install oh-my-zsh'),
+    commands.Command('~/.fzf/install --key-bindings --completion --no-update-rc', desc='Install fzf'),
 
     commands.Command('echo Hello world!'),
 )

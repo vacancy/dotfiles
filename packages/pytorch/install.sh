@@ -7,5 +7,5 @@ then
     conda env remove --name pytorch
 fi
 
-conda env create -f environment.yml -q
+conda env create -f environment.yml
 

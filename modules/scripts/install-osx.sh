@@ -1,3 +1,5 @@
+set +e +x
+
 echo "Install programming languages"
 brew install cmake pkg-config python3 go node perl ruby rust swig bazel jq imagemagick
 

@@ -287,8 +287,8 @@ nmap <leader>s <Plug>(easymotion-overwin-f)
 map  f <Plug>(easymotion-bd-w)
 nmap f <Plug>(easymotion-overwin-w)
 nmap s <Plug>(easymotion-overwin-f2)
-map  L <Plug>(easymotion-bd-jk)
-nmap L <Plug>(easymotion-overwin-line)
+" map  L <Plug>(easymotion-bd-jk)
+" nmap L <Plug>(easymotion-overwin-line)
 
 " 快捷替换
 let g:multi_cursor_start_word_key='<C-d>'

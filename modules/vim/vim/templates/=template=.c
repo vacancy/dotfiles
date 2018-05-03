@@ -1,7 +1,7 @@
 /*
  * File   : %FFILE%
  * Author : %USER%
- * Email  : $MAIL%
+ * Email  : %MAIL%
  * Date   : %MONTH%/%DAY%/%YEAR%
  * 
  * Distributed under terms of the %LICENSE% license.

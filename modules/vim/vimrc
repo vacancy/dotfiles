@@ -110,7 +110,8 @@ Plugin 'majutsushi/tagbar'  " Tag list
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'rizzatti/dash.vim'
 Plugin 'sirver/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets' " Snippets collection
+Plugin 'aperezdc/vim-template'  " File templates
 
 " Search and editing
 Plugin 'Lokaltog/vim-easymotion'  " Quick cursor jumping
@@ -120,13 +121,13 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 
+" Terminal
+Plugin 'ervandew/screen'
+
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/indexer.tar.gz'
 Plugin 'vim-scripts/vimprj'
-
 Plugin 'vim-scripts/DrawIt'
-
-Plugin 'aperezdc/vim-template'
 
 " 插件列表结束
 call vundle#end()
@@ -244,6 +245,8 @@ let g:ycm_collect_identifiers_from_tags_files=0                      " 开启 YC
 let g:ycm_min_num_of_chars_for_completion=1                          " 从第一个键入字符就开始罗列匹配项
 let g:ycm_cache_omnifunc=0                                           " 禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_seed_identifiers_with_syntax=1                             " 语法关键字补全
+let g:ycm_autoclose_preview_window_after_completion=1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 inoremap <leader>; <C-x><C-o>                                        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
 set completeopt-=preview                                             " 补全内容不以分割子窗口形式出现，只显示补全列表
 

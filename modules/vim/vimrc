@@ -76,6 +76,11 @@ inoremap <C-k> <UP>
 inoremap <C-j> <DOWN>
 inoremap <C-h> <LEFT>
 
+" Slient the warnings on start for YCM.
+if has('python3')
+  silent! python3 1
+endif
+
 " >>>>
 " 插件安装
 

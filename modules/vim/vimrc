@@ -22,6 +22,7 @@ set softtabstop=4         " 让 vim 把连续数量的空格视为一个制表�
 
 set backspace=2
 set whichwrap+=<,>,h,l
+set colorcolumn=120
 
 syntax enable    " 开启语法高亮功能
 syntax on        " 允许用指定语法高亮配色方案替换默认方案
@@ -115,7 +116,7 @@ Plugin 'derekwyatt/vim-protodef'  " Converting .h to .cpp
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'scrooloose/nerdcommenter'  " Comment
 Plugin 'majutsushi/tagbar'  " Tag list
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'rizzatti/dash.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets' " Snippets collection
@@ -150,7 +151,7 @@ nmap <silent> <leader>tig <Plug>IndentGuidesToggle
 let g:indent_guides_enable_on_vim_startup=1 " 随 vim 自启动
 let g:indent_guides_start_level=2           " 从第二层开始可视化显示缩进
 let g:indent_guides_guide_size=1            " 色块宽度
- 
+
 " MiniBufExplorer
 autocmd vimenter * :MBEToggle
 map <leader>tbl :MBEToggle<cr>
@@ -212,7 +213,7 @@ let g:tagbar_type_cpp = {
      \ 'kinds'     : [
          \ 'c:classes:0:1',
          \ 'd:macros:0:1',
-         \ 'e:enumerators:0:0', 
+         \ 'e:enumerators:0:0',
          \ 'f:functions:0:1',
          \ 'g:enumeration:0:1',
          \ 'l:local:0:1',
@@ -344,7 +345,7 @@ nnoremap <leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' wit
 nnoremap <leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 nnoremap <leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 
- 
+
 " 启用:Man命令查看各类man信息
 source $VIMRUNTIME/ftplugin/man.vim
 " 定义:Man命令查看各类man信息的快捷键

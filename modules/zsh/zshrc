@@ -94,6 +94,8 @@ export PATH=$HOME/.bin:$PATH
 alias repom="source $HOME/.bin/_repom.sh"
 alias ggst="source $HOME/.bin/_repom.sh status"
 alias ggo="source $HOME/.bin/_repom.sh go"
+alias ls="ls --color=tty --group-directories-first"
+
 
 echo "$terminfo[bold]$fg[blue]#$fg[cyan]「浮世高台我独上 / 回首犹记秋晴望 / 从来山川岁月 / 心乡是我乡」$reset_color"
 

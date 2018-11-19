@@ -28,3 +28,5 @@ export PATH=$HOME/projects/Jacinle/bin:$PATH
 # Go related
 export GOPATH=$HOME/go
 export PATH=$HOME/Go/bin:$PATH
+
+alias ls="ls --color=tty --group-directories-first"

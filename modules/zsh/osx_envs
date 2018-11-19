@@ -23,3 +23,5 @@ export PATH=$HOME/Projects/Jacinle/bin:$PATH
 # GO related
 export GOPATH=$HOME/Projects/Go
 export PATH=$HOME/Projects/Go/bin:$PATH
+
+alias ls="gls --color=tty -h --group-directories-first"

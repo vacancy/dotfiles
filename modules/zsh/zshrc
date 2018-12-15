@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+HISTFILE=$HOME/workspace/data/.zsh_history
+ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

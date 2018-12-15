@@ -4,6 +4,8 @@ filetype plugin on  " 根据侦测到的不同类型加载对应的插件
 
 " 让配置变更立即生效
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"
+set viminfo+=n~/.vim/viminfo
 
 set nocompatible          " 关闭兼容模式
 set number                " 开启行号显示

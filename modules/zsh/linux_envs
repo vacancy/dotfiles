@@ -29,4 +29,4 @@ export PATH=$HOME/projects/Jacinle/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$HOME/Go/bin:$PATH
 
-alias ls="ls --color=tty --group-directories-first"
+alias ls="ls --color=tty --group-directories-first -X"

@@ -55,6 +55,7 @@ class Copy(FSMappingBase):
         if osp.exists(dest):
             if not self.overwrite:
                 logger.warning('  Skip existing file: "{}".'.format(dest))
+                return
             else:
                 logger.warning('  Overwriting existing file: "{}".'.format(dest))
 

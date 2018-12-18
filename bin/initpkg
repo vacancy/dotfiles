@@ -1,0 +1,20 @@
+#! /bin/bash
+#
+# initpkg.sh
+# Copyright (C) 2018 Jiayuan Mao <maojiayuan@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+dir=$1
+
+if [ -z "$1" ]; then
+    echo "error: Invalid argument ($target)"
+    echo "Usage: $0 <dir name>"
+    exit 0
+fi
+
+mkdir -p $dir
+cd $dir
+vim __init__.py
+

@@ -52,6 +52,9 @@ set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 
+" enable the spell check
+set spell spelllang=en_us
+
 " 定义快捷键的前缀，即 <leader>
 let mapleader=";"
 

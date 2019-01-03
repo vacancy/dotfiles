@@ -57,6 +57,7 @@ __commands__ = commands.Commands('/',
 
     commands.Command('zsh/install.sh', desc='Install oh-my-zsh'),
     commands.Command('~/.fzf/install --key-bindings --completion --no-update-rc', desc='Install fzf'),
+    commands.Commands('autojump/autojump', commands.Command('./install.py', desc='Install autojump')),
 
     commands.Command('echo Hello world!'),
 )

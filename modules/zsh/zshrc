@@ -91,6 +91,8 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.config/linux_envs ] && source ~/.config/linux_envs
 [ -f ~/.config/local_envs ] && source ~/.config/local_envs
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 export PATH=$HOME/.bin:$PATH
 alias repom="source $HOME/.bin/_repom.sh"

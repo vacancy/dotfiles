@@ -4,3 +4,6 @@
 [submodule "modules/vim/vim/bundle/Vundle.vim"]
 	path = modules/vim/vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "modules/autojump/autojump"]
+	path = modules/autojump/autojump
+	url = https://github.com/wting/autojump

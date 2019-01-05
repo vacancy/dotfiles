@@ -1,6 +1,6 @@
 set +e +x
 
-command -v brew >/dev/null 2>&1 || { /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" }
+command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Install Homebrew Cask"
 brew tap caskroom/cask
@@ -18,3 +18,4 @@ brew install vim --with-python3
 
 echo "Install quick look plugins"
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+

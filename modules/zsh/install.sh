@@ -1,5 +1,5 @@
 main() {
-  [ -d ~/.oh-my-zsh ] && "oh-my-zsh has been installed." && exit
+  [ -d ~/.oh-my-zsh ] && echo "oh-my-zsh has been installed." && exit
 
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.

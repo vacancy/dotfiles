@@ -42,18 +42,18 @@ __mappings__ = mappings.FSMappings('/',
 
 __commands__ = commands.Commands('/',
     commands.Commands('',
-        commands.Command('scripts/install-linux.sh', desc='Install system utilities'),
+        commands.Command('scripts/install-linux.sh', desc='Install system utilities.'),
         filters=[filters.LinuxFilter()]
     ),
 
     commands.Commands('',
-        commands.Command('scripts/install-osx.sh', desc='Install system utilities'),
+        commands.Command('scripts/install-osx.sh', desc='Install system utilities.'),
         filters=[filters.OSXFilter()]
     ),
 
-    commands.Command('zsh/install.sh', desc='Install oh-my-zsh'),
-    commands.Command('fzf/install.sh', desc='Install fzf'),
-    commands.Command('autojump/install.sh', desc='Install autojump'),
+    commands.Command('zsh/install.sh', desc='Install oh-my-zsh.'),
+    commands.Command('fzf/install.sh', desc='Install fzf.'),
+    commands.Command('autojump/install.sh', desc='Install autojump.'),
 
     commands.Command('echo Hello world!'),
 )

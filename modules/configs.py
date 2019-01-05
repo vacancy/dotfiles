@@ -40,8 +40,6 @@ __mappings__ = mappings.FSMappings('/',
     desc='Config binary executable.'),
 )
 
-install_homebrew = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-
 __commands__ = commands.Commands('/',
     commands.Commands('',
         commands.Command('scripts/install-linux.sh', desc='Install system utilities'),
@@ -49,15 +47,13 @@ __commands__ = commands.Commands('/',
     ),
 
     commands.Commands('',
-        commands.Command(install_homebrew, desc='Install HomeBrew'),
-        commands.Command('brew tap caskroom/cask', desc='Install HomeBrew Cask'),
         commands.Command('scripts/install-osx.sh', desc='Install system utilities'),
         filters=[filters.OSXFilter()]
     ),
 
     commands.Command('zsh/install.sh', desc='Install oh-my-zsh'),
-    commands.Command('~/.fzf/install --key-bindings --completion --no-update-rc', desc='Install fzf'),
-    commands.Commands('autojump/autojump', commands.Command('./install.py', desc='Install autojump')),
+    commands.Command('fzf/install.sh', desc='Install fzf'),
+    commands.Command('autojump/install.sh', desc='Install autojump'),
 
     commands.Command('echo Hello world!'),
 )

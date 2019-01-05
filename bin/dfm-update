@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e -x
+set -e
 
 ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $(readlink $ROOT)
-git pull --rebase --stat origin master
+git pull --rebase --stat --recurse-submodule origin master
 

@@ -83,9 +83,9 @@ inoremap <C-j> <DOWN>
 inoremap <C-h> <LEFT>
 
 " Slient the warnings on start for YCM.
-if has('python3')
-  silent! python3 1
-endif
+" if has('python3')
+"   silent! python3 1
+" endif
 
 " Remove the trailing spaces before saving.
 autocmd BufWritePre * %s/\s\+$//e

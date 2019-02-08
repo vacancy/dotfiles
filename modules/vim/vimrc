@@ -260,7 +260,7 @@ let g:ycm_min_num_of_chars_for_completion=1                          " 从第一
 let g:ycm_cache_omnifunc=0                                           " 禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_seed_identifiers_with_syntax=1                             " 语法关键字补全
 let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <C-g> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 inoremap <leader>; <C-x><C-o>                                        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
 set completeopt-=preview                                             " 补全内容不以分割子窗口形式出现，只显示补全列表
 
@@ -288,15 +288,15 @@ let g:NERDSpaceDelims = 1
 nmap <leader>tn :tnext<CR>
 " 反向遍历同名标签
 nmap <leader>tp :tprevious<CR>
-" 基于语义的代码导航
-nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
-" 只能是 #include 或已打开的文件
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：global search
 nnoremap <leader>gs :CtrlSF<CR>
-map <SPACE> <Plug>(wildfire-fuel)
-vmap <S-SPACE> <Plug>(wildfire-water)
-let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip"]  " 适用于哪些结对符
+let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_position = 'bottom'
+
+" map <SPACE> <Plug>(wildfire-fuel)
+" vmap <S-SPACE> <Plug>(wildfire-water)
+" let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip"]  " 适用于哪些结对符
 
 map  <leader>s <Plug>(easymotion-bd-f)            " <leader>c{char} to move to {char}
 nmap <leader>s <Plug>(easymotion-overwin-f)

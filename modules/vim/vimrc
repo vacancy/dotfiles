@@ -105,7 +105,7 @@ Plugin 'aperezdc/vim-template'  " File templates
 
 " Search and editing
 Plugin 'Lokaltog/vim-easymotion'  " Quick cursor jumping
-Plugin 'gcmt/wildfire.vim'  " Quick selection
+" Plugin 'gcmt/wildfire.vim'  " Quick selection
 Plugin 'terryma/vim-multiple-cursors'  " Multiple cursor
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'kshenoy/vim-signature'
@@ -352,6 +352,8 @@ map <C-l> :MBEbf<cr>
 map <C-h> :MBEbb<cr>
 
 nnoremap <C-g> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>d :YcmCompleter GetDoc<CR>
 inoremap <leader>; <C-x><C-o>                                        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
 
 " wildfire

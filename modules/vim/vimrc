@@ -220,6 +220,7 @@ let g:tagbar_sort=0           " 不按照字母顺序排序
 let g:tagbar_foldlevel=99     " 默认展开
 
 " YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_complete_in_comments=1                                     " 补全功能在注释中同样有效
 let g:ycm_confirm_extra_conf=0                                       " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
 let g:ycm_collect_identifiers_from_tags_files=0                      " 开启 YCM 标签补全引擎

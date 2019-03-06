@@ -1,0 +1,14 @@
+#! /bin/bash
+#
+# sysutil-rebuild-iconcache.sh
+# Copyright (C) 2019 Jiayuan Mao <maojiayuan@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+sudo find /private/var/folders/ \( -name com.apple.dock.iconcache -or -name com.apple.iconservices \) -exec rm -rfv {} \;
+sudo rm -rf /Library/Caches/com.apple.iconservices.store;
+killall Dock
+killall Finder
+
+

@@ -29,7 +29,7 @@ parser_get = subparsers.add_parser('get', help='Get a repo from github.')
 parser_get.set_defaults(action='get')
 parser_get.add_argument('repo')
 
-parser_init = subparsers.add_parser('init', help='Init a repom.')
+parser_init = subparsers.add_parser('init', help='Init a repo.')
 parser_init.set_defaults(action='init')
 parser_init.add_argument('--project', default=None, help='Customized project name.')
 
@@ -189,7 +189,7 @@ def main():
             print('-' * 50)
             repo.print()
             print('-' * 50)
-            repo.exec('git pull')
+            repo.exec('git pull --recurse-submodules')
     elif args.action == 'find':
         repo = repos.find(args.repo)
     elif args.action == 'go':

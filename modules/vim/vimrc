@@ -168,7 +168,7 @@ autocmd vimenter * NERDTree
 let NERDTreeWinSize=32             " 设置 NERDTree 子窗口宽度
 let NERDTreeWinPos="left"          " 设置 NERDTree 子窗口位置
 let NERDTreeShowHidden=1           " 显示隐藏文件
-let NERDTreeMinimalUI=1            " NERDTree 子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=0            " NERDTree 子窗口中不显示冗余帮助信息
 let NERDTreeAutoDeleteBuffer=1     " 删除文件时自动删除文件对应 buffer
 let NERDTreeHighlightCursorline=1  " 高亮显示光标所在的文件
 let NERDTreeChDirMode = 2          " 当前目录的设定

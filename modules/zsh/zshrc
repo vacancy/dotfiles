@@ -103,5 +103,6 @@ alias ggo="source $HOME/.bin/_repom.sh go"
 
 
 # echo "$terminfo[bold]$fg[blue]#$fg[cyan]「浮世高台我独上 / 回首犹记秋晴望 / 从来山川岁月 / 心乡是我乡」$reset_color"
-echo "$terminfo[bold]$fg[blue]#$fg[cyan]「风光恰与少年同 / 十里清风慕天青」$reset_color"
+# echo "$terminfo[bold]$fg[blue]#$fg[cyan]「风光恰与少年同 / 十里清风慕天青」$reset_color"
+echo "$terminfo[bold]$fg[blue]#$fg[cyan]「此情若得一株雪 / 人生何处不清明」$reset_color"
 

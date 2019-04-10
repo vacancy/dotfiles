@@ -1,9 +1,13 @@
 snippet todo "A TODO reminder" b
-# TODO(`!v g:snips_author` @ `!v strftime('%m/%d')`): ${1:fix this.}
+# TODO(`!v g:snips_author` @ `!v strftime('%m/%d')`): ${1:fix this}.
+endsnippet
+
+snippet nb "A note" b
+# NB(`!v g:snips_author` @ `!v strftime('%m/%d')`): ${1:}.
 endsnippet
 
 snippet deprecate "A DEPRECATE reminder" b
-"""DEPRECATED(`!v g:snips_author`): ${1} has been deprecated and will be removed by `!p 
+"""DEPRECATED(`!v g:snips_author`): ${1} has been deprecated and will be removed by `!p
 import time
 snip.rv = time.strftime('%m/%d/%Y', time.localtime(time.mktime(time.localtime()) + 3600 * 24 * 180))
 `; please use ${2} instead."""

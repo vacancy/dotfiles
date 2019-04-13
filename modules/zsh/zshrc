@@ -1,8 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-#
+
 HISTFILE=$HOME/.config/.zsh_history
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+# Speeds up load time
+DISABLE_UPDATE_PROMPT=true
+
+# Perform compinit only once a day.
+autoload -Uz compinit
+compinit -C -d ${ZSH_COMPDUMP}
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

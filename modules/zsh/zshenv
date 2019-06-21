@@ -1,3 +1,5 @@
 HISTFILE=$HOME/.config/.zsh_history
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+export HISTFILE=$HOME/.config/.zsh_history
+export ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 

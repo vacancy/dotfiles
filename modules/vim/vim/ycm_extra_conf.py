@@ -1,5 +1,8 @@
+import six
+import subprocess
+
 def Settings( **kwargs ):
     return {
-        'interpreter_path': '/data/vision/billf/scratch/jiayuanm/anaconda/envs/default/bin/python3'
+        'interpreter_path': (subprocess.check_output(['which', 'python3'])).decode('utf8').strip()
     }
 

@@ -1,0 +1,10 @@
+#! /bin/bash
+#
+# mitutil-explorer.sh
+# Copyright (C) 2019 Jiayuan Mao <maojiayuan@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+DIR=$(readlink -f `pwd`)
+echo "http://monday.csail.mit.edu/cgi-bin/xiuming/file_explorer.cgi/?dir=${DIR}&patterns_show=*&patterns_highlight=&w=400&n=3&showmedia=1"

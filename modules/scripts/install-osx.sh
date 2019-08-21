@@ -11,7 +11,7 @@ brew install cmake pkg-config python3 go node perl ruby rust swig bazel jq image
 brew install tbb tcl-tk
 
 echo "Install system tools"
-brew install ssh-copy-id zsh tmux ranger tree unrar fontconfig curl wget axel aria2 the_silver_searcher watch htop nload ctags coreutils
+brew install ssh-copy-id zsh tmux ranger tree unrar fontconfig curl wget axel aria2 the_silver_searcher watch htop nload ctags coreutils wdiff colordiff
 
 echo "Install vim with python3 support"
 brew install vim --with-python3

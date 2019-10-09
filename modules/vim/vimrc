@@ -1,4 +1,4 @@
-if version > 800
+if version > 740
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
@@ -81,7 +81,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
 Plugin 'iCyMind/NeoSolarized'
-Plugin 'morhetz/gruvbox'
 
 " Display
 Plugin 'Lokaltog/vim-powerline'
@@ -302,9 +301,9 @@ set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,option
 " hi StatusLineNC ctermfg=246 ctermbg=232
 
 set background=light
-colorscheme gruvbox
-" let g:neosolarized_contrast = "high"
-" let g:neosolarized_visibility = "high"
+colorscheme NeoSolarized
+let g:neosolarized_contrast = "high"
+let g:neosolarized_visibility = "high"
 let g:gitgutter_override_sign_column_highlight = 0
 
 " 高亮显示当前行/列

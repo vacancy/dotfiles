@@ -1,10 +1,14 @@
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
 filetype on  " 开启文件类型侦测
 filetype indent on
 filetype plugin on  " 根据侦测到的不同类型加载对应的插件
 
 " 让配置变更立即生效
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
-"
+
 set viminfo+=n~/.vim/viminfo
 
 set nocompatible          " 关闭兼容模式
@@ -24,7 +28,6 @@ set softtabstop=4         " 让 vim 把连续数量的空格视为一个制表�
 
 set backspace=2
 set whichwrap+=<,>,h,l
-set colorcolumn=120
 
 syntax enable    " 开启语法高亮功能
 syntax on        " 允许用指定语法高亮配色方案替换默认方案
@@ -40,12 +43,6 @@ set guioptions-=R
 set guioptions-=m         " 禁止显示菜单和工具条
 set guioptions-=T
 set guifont=YaHei\ Consolas\ Hybrid\ 10.5
-
-" 高亮显示当前行/列
-set cursorline
-set cursorcolumn
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " 定义鼠标模式
 set mouse=a
@@ -81,6 +78,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
+Plugin 'iCyMind/NeoSolarized'
 
 " Display
 Plugin 'Lokaltog/vim-powerline'
@@ -92,20 +90,20 @@ Plugin 'scrooloose/nerdtree'  " File list
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'derekwyatt/vim-fswitch'  " Switcher between .h and .cpp
 Plugin 'derekwyatt/vim-protodef'  " Converting .h to .cpp
+Plugin 'airblade/vim-gitgutter'
 
 " Coding helpers. Highlight, auto-completion, comment, navigation.
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'scrooloose/nerdcommenter'  " Comment
 Plugin 'majutsushi/tagbar'  " Tag list
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rizzatti/dash.vim'
+Plugin 'aperezdc/vim-template'  " File templates
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets' " Snippets collection
-Plugin 'aperezdc/vim-template'  " File templates
+Plugin 'scrooloose/nerdcommenter'  " Comment
+Plugin 'rizzatti/dash.vim'
 
 " Search and editing
 Plugin 'Lokaltog/vim-easymotion'  " Quick cursor jumping
-" Plugin 'gcmt/wildfire.vim'  " Quick selection
 Plugin 'terryma/vim-multiple-cursors'  " Multiple cursor
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'kshenoy/vim-signature'
@@ -291,14 +289,37 @@ set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,option
 
 " 配色方案
 " set background=dark
-colorscheme molokai
 " Change the color for comments.
-hi Comment ctermfg=246 guifg=#999999
-hi VisualNOS ctermbg=240
-hi Visual ctermbg=238
-hi Underlined ctermfg=246 cterm=underline
-hi StatusLine   ctermfg=246 ctermbg=253
-hi StatusLineNC ctermfg=246 ctermbg=232
+" colorscheme molokai
+" hi Comment ctermfg=246 guifg=#999999
+" hi VisualNOS ctermbg=240
+" hi Visual ctermbg=238
+" hi Underlined ctermfg=246 cterm=underline
+" hi StatusLine   ctermfg=246 ctermbg=253
+" hi StatusLineNC ctermfg=246 ctermbg=232
+
+set background=light
+colorscheme NeoSolarized
+let g:neosolarized_contrast = "high"
+let g:neosolarized_visibility = "high"
+let g:gitgutter_override_sign_column_highlight = 0
+
+" 高亮显示当前行/列
+set cursorline
+set cursorcolumn
+set colorcolumn=120
+
+" hi Normal guibg=NONE ctermbg=NONE
+" hi ColorColumn  term=reverse ctermbg=1 guibg=LightRed
+" hi CursorLine   cterm=NONE ctermbg=1 guibg=LightRed
+" hi CursorColumn cterm=NONE ctermbg=1 guibg=LightRed
+
+" hi Comment ctermfg=246 guifg=#999999
+" hi VisualNOS ctermbg=240
+" hi Visual ctermbg=238
+" hi Underlined ctermfg=246 cterm=underline
+" hi StatusLine   ctermfg=246 ctermbg=253
+" hi StatusLineNC ctermfg=246 ctermbg=232
 
 " Templates
 let g:templates_directory='$HOME/.vim/templates'

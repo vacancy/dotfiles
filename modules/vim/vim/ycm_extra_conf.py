@@ -1,4 +1,3 @@
-import six
 import subprocess
 
 def Settings( **kwargs ):

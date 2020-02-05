@@ -1,0 +1,9 @@
+#! /bin/bash
+#
+# dot2tex-tikz.sh
+# Copyright (C) 2019 Jiayuan Mao <maojiayuan@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+dot2tex "$1" -f tikz > "${1%.dot}.tex"

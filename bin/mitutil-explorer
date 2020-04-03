@@ -6,5 +6,5 @@
 # Distributed under terms of the MIT license.
 #
 
-DIR=$(readlink -f `pwd`)
-echo "http://monday.csail.mit.edu/cgi-bin/xiuming/file_explorer.cgi/?dir=${DIR}&patterns_show=*&patterns_highlight=&w=400&n=3&showmedia=1"
+DIR=$(readlink -f "`pwd`")
+echo "http://vision38.csail.mit.edu/cgi-bin/show/?dir=${DIR}&patterns_show=*&patterns_highlight=&w=400&n=3&showmedia=1"

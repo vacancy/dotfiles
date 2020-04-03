@@ -35,8 +35,12 @@ set whichwrap+=<,>,h,l
 syntax enable    " 开启语法高亮功能
 syntax on        " 允许用指定语法高亮配色方案替换默认方案
 
-set foldmethod=syntax    " 基于缩进或语法进行代码折叠
+set foldmethod=indent     " 基于缩进或语法进行代码折叠
 set nofoldenable         " 启动 vim 时关闭折叠代码
+" augroup OpenAllFoldsOnFileOpen
+"     autocmd!
+"     autocmd BufRead * normal zR
+" augroup END
 
 set gcr=a:block-blinkon0  " 禁止光标闪烁
 set guioptions-=l         " 禁止显示滚动条
@@ -293,6 +297,7 @@ set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,option
 " 配色方案
 " set background=dark
 " Change the color for comments.
+
 " colorscheme molokai
 " hi Comment ctermfg=246 guifg=#999999
 " hi VisualNOS ctermbg=240
@@ -333,6 +338,8 @@ let g:email='maojiayuan@gmail.com'
 let g:snips_author="Jiayuan Mao"
 let g:snips_email="maojiayuan@gmail.com"
 let g:snips_github="https://github.com/vacancy"
+
+:nnoremap <space> zA
 
 " 定义快捷键到行首和行尾
 nmap LB 0

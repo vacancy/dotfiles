@@ -1,0 +1,21 @@
+#! /bin/bash
+#
+# gdrive-download.sh
+# Copyright (C) 2020 Jiayuan Mao <maojiayuan@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+fileid=$1
+cookiefile=$(mktemp /tmp/cookies.XXXXXX.txt)
+welcome=$(wget --quiet --save-cookies $cookiefile --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$fileid" -O-)
+filename=`echo $welcome | sed -rn 's/.*<a href="https\:\/\/docs.google.com\/open[^>]*">([^<]*).*/\1\n/p'`
+if [ -z "$filename" ]; then
+    filename="download"
+fi
+echo $filename
+confirm=$(echo $welcome | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')
+echo $confirm
+wget --load-cookies $cookiefile "https://docs.google.com/uc?export=download&confirm=$confirm&id=$fileid" -O $filename
+echo done
+rm -rf $cookiefile

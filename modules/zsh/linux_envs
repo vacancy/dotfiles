@@ -30,3 +30,5 @@ export GOPATH=$HOME/go
 export PATH=$HOME/Go/bin:$PATH
 
 alias ls="ls --color=tty --group-directories-first -X"
+alias mosh="mosh --experimental-remote-ip=remote"
+alias moshmit='mosh --experimental-remote-ip=remote --server="LD_PRELOAD=/data/vision/billf/scratch/jiayuanm/workspace/local/bin/libprotobuf.so.9 /afs/csail.mit.edu/u/j/jiayuanm/workspace/local/bin/mosh-server"'

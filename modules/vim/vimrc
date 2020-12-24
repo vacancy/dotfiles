@@ -306,7 +306,6 @@ set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,option
 " hi StatusLine   ctermfg=246 ctermbg=253
 " hi StatusLineNC ctermfg=246 ctermbg=232
 
-" set background=dark
 colorscheme NeoSolarized
 set background=light
 let g:neosolarized_contrast = "high"

@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 # autoload -U "compinit -d $ZSH_COMPDUMP"
 # compinit -u -d $ZSH_COMPDUMP

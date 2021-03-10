@@ -295,10 +295,10 @@ source $VIMRUNTIME/ftplugin/man.vim
 set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
 
 " 配色方案
-" set background=dark
 " Change the color for comments.
 
 " colorscheme molokai
+" set background=dark
 " hi Comment ctermfg=246 guifg=#999999
 " hi VisualNOS ctermbg=240
 " hi Visual ctermbg=238
@@ -306,8 +306,8 @@ set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,option
 " hi StatusLine   ctermfg=246 ctermbg=253
 " hi StatusLineNC ctermfg=246 ctermbg=232
 
-set background=light
 colorscheme NeoSolarized
+set background=light
 let g:neosolarized_contrast = "high"
 let g:neosolarized_visibility = "high"
 let g:gitgutter_override_sign_column_highlight = 0

@@ -12,3 +12,12 @@ import time
 snip.rv = time.strftime('%m/%d/%Y', time.localtime(time.mktime(time.localtime()) + 3600 * 24 * 180))
 `; please use ${2} instead."""
 endsnippet
+
+snippet embed "IPython embed" b
+from IPython import embed; emmbed()
+endsnippet
+
+snippet ipdb "ipdb breakpoint" b
+import ipdb; ipdb.set_trace()
+endsnippet
+

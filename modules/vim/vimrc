@@ -117,7 +117,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 
 " Terminal
-Plugin 'ervandew/screen'
+" Plugin 'ervandew/screen'
 
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/indexer.tar.gz'
@@ -178,9 +178,12 @@ let NERDTreeAutoDeleteBuffer=1     " 删除文件时自动删除文件对应 buf
 let NERDTreeHighlightCursorline=1  " 高亮显示光标所在的文件
 let NERDTreeChDirMode = 2          " 当前目录的设定
 
-autocmd VimEnter * nested :TagbarOpen
-wincmd l
+" autocmd VimEnter * nested :TagbarOpen
+" wincmd l
 autocmd VimEnter * wincmd l  "如果不加这句，打开vim的时候当前光标会在Nerdtree区域
+autocmd VimEnter * wincmd j  "如果不加这句，打开vim的时候当前光标会在Nerdtree区域
+
+let g:tagbar_autofocus=1
 let g:tagbar_vertical = 25 " 显示在Nerdtree下方
 let g:tagbar_width=32      " 设置标签子窗口的宽度
 let g:tagbar_compact=1     " tagbar 子窗口中不显示冗余帮助信息
@@ -220,7 +223,6 @@ let g:tagbar_type_cpp = {
      \ }
 \ }
 let g:tagbar_autoshowtag = 1  " 当编辑代码时，在Tagbar自动追踪变量
-let g:tagbar_autofocus=1
 let g:tagbar_sort=0           " 不按照字母顺序排序
 let g:tagbar_foldlevel=99     " 默认展开
 

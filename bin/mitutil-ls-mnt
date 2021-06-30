@@ -13,7 +13,7 @@ import queue
 def work(i):
     try:
         output = subprocess.check_output(
-            "ssh -o ConnectTimeout=3 -o BatchMode=yes -o StrictHostKeyChecking=no -o ClearAllForwardings=yes visiongpu{:02d} ls /mnt/*/".format(i).split(),
+            "ssh -o ConnectTimeout=3 -o BatchMode=yes -o StrictHostKeyChecking=no -o ClearAllForwardings=yes visiongpu{:02d} ls -alh /mnt/*/".format(i).split(),
             stderr=subprocess.STDOUT,
         )
         output = output.decode('utf8').strip()

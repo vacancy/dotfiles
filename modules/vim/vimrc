@@ -143,20 +143,24 @@ autocmd VimEnter * wincmd j
 " 配色方案
 " Change the color for comments.
 
-colorscheme molokai
-set background=dark
-hi Comment ctermfg=246 guifg=#999999
-hi VisualNOS ctermbg=240
-hi Visual ctermbg=238
-hi Underlined ctermfg=246 cterm=underline
-hi StatusLine   ctermfg=246 ctermbg=253
-hi StatusLineNC ctermfg=246 ctermbg=232
+" colorscheme molokai
+" set background=dark
+" hi Comment ctermfg=246 guifg=#999999
+" hi VisualNOS ctermbg=240
+" hi Visual ctermbg=238
+" hi Underlined ctermfg=246 cterm=underline
+" hi StatusLine   ctermfg=246 ctermbg=253
+" hi StatusLineNC ctermfg=246 ctermbg=232
+" Powerline
+" let g:Powerline_colorscheme='solarized256'
 
-" colorscheme NeoSolarized
-" set background=light
-" let g:neosolarized_contrast = "high"
-" let g:neosolarized_visibility = "high"
-" let g:gitgutter_override_sign_column_highlight = 0
+colorscheme NeoSolarized
+set background=light
+let g:neosolarized_contrast = "high"
+let g:neosolarized_visibility = "high"
+let g:gitgutter_override_sign_column_highlight = 0
+" Powerline
+let g:Powerline_colorscheme='solarized16'
 
 " 高亮显示当前行/列
 set cursorline
@@ -240,9 +244,6 @@ nmap <leader>man :Man 3 <cword><CR>
 
 " 调用 gundo 树
 nnoremap <leader>ud :GundoToggle<CR>
-
-" Powerline
-let g:Powerline_colorscheme='solarized256'
 
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup=1 " 随 vim 自启动
@@ -331,7 +332,7 @@ let g:tagbar_foldlevel=99     " 默认展开
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_complete_in_comments=1                                     " 补全功能在注释中同样有效
-let g:ycm_confirm_extra_conf=1                                       " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+let g:ycm_confirm_extra_conf=0                                       " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
 let g:ycm_collect_identifiers_from_tags_files=0                      " 开启 YCM 标签补全引擎
 let g:ycm_min_num_of_chars_for_completion=1                          " 从第一个键入字符就开始罗列匹配项
 let g:ycm_cache_omnifunc=1                                           " 禁止缓存匹配项，每次都重新生成匹配项

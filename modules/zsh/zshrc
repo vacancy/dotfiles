@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
 HISTFILESIZE=1000000
 HISTFILE=$HOME/.config/.zsh_history
@@ -117,4 +117,5 @@ alias ggo="source $HOME/.bin/_repom.sh go"
 # echo "$terminfo[bold]$fg[blue]#$fg[cyan]「岁月磨平了些许轻狂的棱角，可剑不老，心不老，少年便不会老。」$reset_color"
 # echo "$terminfo[bold]$fg[blue]#$fg[cyan] 人生百年，吾道不孤。$reset_color"
 
-[ -f ~/.config/osx_envs ] && neofetch
+# [ -f ~/.config/osx_envs ] && neofetch
+

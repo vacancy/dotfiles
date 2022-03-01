@@ -211,7 +211,7 @@ map <C-h> :MBEbb<cr>
 nnoremap <C-g> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
-inoremap <leader>; <C-x><C-o>                                        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+" inoremap <leader>; <C-x><C-o>                                        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
 
 " wildfire
 " map <SPACE> <Plug>(wildfire-fuel)

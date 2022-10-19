@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -E
 #
 # initpkg.sh
 # Copyright (C) 2018 Jiayuan Mao <maojiayuan@gmail.com>
@@ -16,5 +16,5 @@ fi
 
 mkdir -p $dir
 cd $dir
-vim __init__.py
+nvim __init__.py
 

@@ -31,5 +31,5 @@ export PYTHONPATH=$HOME/Projects/Jacinle:$PYTHONPATH
 alias ls="gls --color=tty -h --group-directories-first"
 alias mosh="mosh --experimental-remote-ip=remote"
 alias moshmit='mosh --experimental-remote-ip=remote --server="LD_PRELOAD=/data/vision/billf/scratch/jiayuanm/workspace/local/bin/libprotobuf.so.9 /afs/csail.mit.edu/u/j/jiayuanm/workspace/local/bin/mosh-server"'
-alias shttpd="python2 -m SimpleHTTPServer 8888"
+alias shttpd="python3 -m http.server 8888"
 

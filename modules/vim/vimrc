@@ -83,6 +83,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
 Plugin 'iCyMind/NeoSolarized'
+Plugin 'ayu-theme/ayu-vim' " or other package manager
 
 " Display
 Plugin 'Lokaltog/vim-powerline'
@@ -154,11 +155,16 @@ autocmd VimEnter * wincmd j
 " Powerline
 " let g:Powerline_colorscheme='solarized256'
 
-colorscheme NeoSolarized
-set background=light
-let g:neosolarized_contrast = "high"
-let g:neosolarized_visibility = "high"
-let g:gitgutter_override_sign_column_highlight = 0
+" colorscheme NeoSolarized
+" set background=light
+" let g:neosolarized_contrast = "high"
+" let g:neosolarized_visibility = "high"
+" let g:gitgutter_override_sign_column_highlight = 0
+
+set termguicolors    " enable true colors support
+let ayucolor="light" " for light version of theme
+colorscheme ayu
+
 " Powerline
 let g:Powerline_colorscheme='solarized16'
 
@@ -278,7 +284,7 @@ let g:SignatureMap = {
     \ 'ListLocalMarkers'   :  "m?"
 \ }
 
-let NERDTreeWinSize=32             " 设置 NERDTree 子窗口宽度
+let NERDTreeWinSize=64             " 设置 NERDTree 子窗口宽度
 let NERDTreeWinPos="left"          " 设置 NERDTree 子窗口位置
 let NERDTreeShowHidden=1           " 显示隐藏文件
 let NERDTreeMinimalUI=1            " NERDTree 子窗口中不显示冗余帮助信息
@@ -288,7 +294,7 @@ let NERDTreeChDirMode = 2          " 当前目录的设定
 
 let g:tagbar_autofocus=1
 let g:tagbar_vertical = 25 " 显示在Nerdtree下方
-let g:tagbar_width=32      " 设置标签子窗口的宽度
+let g:tagbar_width=64      " 设置标签子窗口的宽度
 let g:tagbar_compact=1     " tagbar 子窗口中不显示冗余帮助信息
 " 设置 ctags 对哪些代码标识符生成标签
 let g:tagbar_type_cpp = {

@@ -47,7 +47,7 @@
 .nfs*
 
 # Windows image file caches
-Thumbs.db 
+Thumbs.db
 
 # Folder config file
 Desktop.ini
@@ -64,3 +64,5 @@ Desktop.ini
 .settings/
 .ipynb_checkpoints/
 
+# CTags
+/tags

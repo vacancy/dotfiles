@@ -15,4 +15,3 @@ then
 else
     echo "You are not a sudoer."
 fi
-

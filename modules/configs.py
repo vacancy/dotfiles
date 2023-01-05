@@ -5,7 +5,7 @@ import dfm.commands as commands
 import dfm.mappings as mappings
 import dfm.filters as filters
 
-if dfm.plain_vim:
+if dfm.args.plain_vim:
     vim_fs_mappings = mappings.FSMappings(
         'vim',
         mappings.Link('vimrc', '.vimrc'),

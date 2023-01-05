@@ -10,9 +10,11 @@
 import sys
 import os.path as osp
 import argparse
+import dfm
 
 parser = argparse.ArgumentParser('DFM-Install')
 parser.add_argument('--prefix', default=osp.expanduser('~'))
+parser.add_arugment('--plain-vim', action='store_true', help='Install raw vim (instead of NVIM + SpaceVim)')
 parser.add_argument('--no-mappings', action='store_true')
 parser.add_argument('--no-commands', action='store_true')
 args = parser.parse_args()
@@ -20,6 +22,8 @@ args = parser.parse_args()
 args.root_dir = osp.dirname(osp.dirname(osp.realpath(__file__)))
 args.module_dir = osp.join(args.root_dir, 'modules')
 sys.path.insert(0, args.root_dir)
+
+dfm.args = args
 
 
 def load_config():

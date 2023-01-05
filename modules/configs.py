@@ -1,53 +1,86 @@
 # -*- coding: utf8 -*-
 
+import dfm
 import dfm.commands as commands
 import dfm.mappings as mappings
 import dfm.filters as filters
 
+if dfm.plain_vim:
+    vim_fs_mappings = mappings.FSMappings(
+        'vim',
+        mappings.Link('vimrc', '.vimrc'),
+        mappings.Link('vim', '.vim'),
+        desc='Config vim.'
+    )
+else:
+    mappings.FSMappings(
+        'spacevim',
+        mappings.Link('SpaceVim.d', '.SpaceVim.d'),
+        desc='Config spacevim.'
+    )
 
-__mappings__ = mappings.FSMappings('/',
-    mappings.FSMappings('fzf',
+
+__mappings__ = mappings.FSMappings(
+    '/',
+    mappings.FSMappings(
+        'fzf',
         mappings.Link('fzf', '.fzf'),
-        desc='Config fzf.'),
-    mappings.FSMappings('git',
+        desc='Config fzf.'
+    ),
+    mappings.FSMappings(
+        'git',
         mappings.Copy('gitconfig', '.gitconfig', overwrite=False),
         mappings.Link('gitignore_global', '.gitignore_global'),
-        desc='Config git.'),
-    mappings.FSMappings('python',
+        desc='Config git.'
+    ),
+    mappings.FSMappings(
+        'python',
         mappings.Copy('pip.conf', '.pip/pip.conf', overwrite=False),
         mappings.Copy('pycodestyle', '.config/pycodestyle', overwrite=False),
-        desc='Config python.'),
-    mappings.FSMappings('ssh',
+        desc='Config python.'
+    ),
+    mappings.FSMappings(
+        'ssh',
         mappings.Copy('authorized_keys', '.ssh/authorized_keys', overwrite=False),
-        desc='Config ssh.'),
-    mappings.FSMappings('tmux',
+        desc='Config ssh.'
+    ),
+    mappings.FSMappings(
+        'tmux',
         mappings.Link('tmux.conf', '.tmux.conf'),
-        desc='Config tmux.'),
-    mappings.FSMappings('spacevim',
-        mappings.Link('SpaceVim.d', '.SpaceVim.d'),
-        desc='Config spacevim.'),
-    mappings.FSMappings('zsh',
+        desc='Config tmux.'
+    ),
+    mappings.FSMappings(
+        'zsh',
         mappings.Link('zshrc', '.zshrc'),
         mappings.Link('zshenv', '.zshenv'),
         mappings.Link('osx_envs', '.config/osx_envs', filters=[filters.OSXFilter()]),
         mappings.Link('linux_envs', '.config/linux_envs', filters=[filters.LinuxFilter()]),
         mappings.Copy('local_envs', '.config/local_envs', overwrite=False),
-        desc='Config zsh.'),
-    mappings.FSMappings('neofetch',
+        desc='Config zsh.'
+    ),
+    vim_fs_mappings,
+    mappings.FSMappings(
+        'neofetch',
         mappings.Link('neofetch', '.config/neofetch'),
-        desc='Config neofetch.'),
-    mappings.FSMappings('/',
+        desc='Config neofetch.'
+    ),
+    mappings.FSMappings(
+        '/',
         mappings.Link('../bin', '.bin'),
-        desc='Config binary executable.'),
+        desc='Config binary executable.'
+    ),
 )
 
-__commands__ = commands.Commands('/',
-    commands.Commands('',
+__commands__ = commands.Commands(
+    '/',
+    commands.Commands(
+        '',
         commands.Command('scripts/install-linux.sh', desc='Install system utilities.'),
         filters=[filters.LinuxFilter()]
     ),
 
-    commands.Commands('',
+    commands.Commands(
+        '',
         commands.Command('scripts/install-osx.sh', desc='Install system utilities.'),
         filters=[filters.OSXFilter()]
     ),
@@ -58,4 +91,3 @@ __commands__ = commands.Commands('/',
 
     commands.Command('echo Hello world!'),
 )
-

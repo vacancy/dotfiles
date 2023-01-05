@@ -27,6 +27,7 @@ export GEM_HOME="$HOME/Workspace/Gem"
 export PATH=$HOME/Projects/Go/bin:$PATH
 
 export PYTHONPATH=$HOME/Projects/Jacinle:$PYTHONPATH
+export PYTHONPATH=$HOME/Projects/Concepts:$PYTHONPATH
 
 alias ls="gls --color=tty -h --group-directories-first"
 alias mosh="mosh --experimental-remote-ip=remote"

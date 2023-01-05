@@ -13,7 +13,7 @@ if dfm.args.plain_vim:
         desc='Config vim.'
     )
 else:
-    mappings.FSMappings(
+    vim_fs_mappings = mappings.FSMappings(
         'spacevim',
         mappings.Link('SpaceVim.d', '.SpaceVim.d'),
         desc='Config spacevim.'

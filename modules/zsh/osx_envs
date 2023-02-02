@@ -26,6 +26,9 @@ export GOPATH=$HOME/Projects/Go
 export GEM_HOME="$HOME/Workspace/Gem"
 export PATH=$HOME/Projects/Go/bin:$PATH
 
+# NLTK
+export NLTK_DATA=$HOME/Workspace/nltk_data
+
 export PYTHONPATH=$HOME/Projects/Jacinle:$PYTHONPATH
 export PYTHONPATH=$HOME/Projects/Concepts:$PYTHONPATH
 

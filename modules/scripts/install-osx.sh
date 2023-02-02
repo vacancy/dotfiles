@@ -14,6 +14,9 @@ brew install ssh-copy-id zsh tmux ranger tree fontconfig curl wget axel aria2 th
 echo "Install vim with python3 support"
 brew install vim nvim
 
+echo "Install git delta"
+brew install git-delta
+
 echo "Install quick look plugins"
-brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook quicklookase qlvideo --cask
+brew install qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook quicklookase qlvideo --cask
 

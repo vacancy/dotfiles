@@ -57,6 +57,7 @@ function! myspacevim#after() abort
     autocmd FileType fzf setlocal nonumber norelativenumber
   augroup END
   nnoremap <silent> <C-p> :Files<cr>
+  nnoremap <silent> <C-j> :GFiles<cr>
   nnoremap <silent> <C-t> :Tags<cr>
   nnoremap <silent> <C-f> :call SpaceVim#lsp#references()<cr>
 endfunction

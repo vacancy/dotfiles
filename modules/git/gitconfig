@@ -1,11 +1,24 @@
 [user]
-  name = Jiayuan Mao
-  email = maojiayuan@gmail.com
+	name = Jiayuan Mao
+	email = maojiayuan@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
   editor = nano
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  line-numbers = true
+
+[diff]
+  colorMoved = default
+
 [apply]
   whitespace = fix
 [color]
@@ -29,7 +42,13 @@
   rebase = false
 [merge]
   log = true
+  conflictstyle = diff3
 [credential]
   # Enable HTTP(S) auth credential caching
   # for 60 seconds (requires git 1.7.9+)
   helper = cache --timeout 3600
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

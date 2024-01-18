@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+RATE="$((1.0/$2))"
+ffmpeg -i $1 -vf "setpts=$RATE*PTS" $1-$2x.mp4

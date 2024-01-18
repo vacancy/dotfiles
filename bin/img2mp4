@@ -1,0 +1,57 @@
+#! /bin/bash
+#
+# mc_02024.sh
+# Copyright (C) 2023 Jiayuan Mao <maojiayuan@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+set -e
+
+# Usage:: <mc_0204.sh> --expr EXPR_NAME
+
+PATTERN="$1"
+shift
+
+FPS=24
+QUALITY=5
+OUTPUT="output.mp4"
+
+while [[ $# -gt 0 ]]; do
+    key="$1"
+    case $key in
+        --quality)
+            QUALITY="$2"
+            shift
+            shift
+            ;;
+        --fps)
+            FPS="$2"
+            shift
+            shift
+            ;;
+        --output)
+            OUTPUT="$2"
+            shift
+            shift
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            echo "Unknown option: $key"
+            exit 1
+            ;;
+    esac
+done
+
+if [[ -z $PATTERN ]]; then
+    echo "Pattern is not specified."
+    exit 1
+fi
+
+# Run
+set -x
+
+ffmpeg -framerate $FPS -pattern_type glob -i $PATTERN -c:v libx264 -pix_fmt yuv420p -crf $QUALITY $OUTPUT

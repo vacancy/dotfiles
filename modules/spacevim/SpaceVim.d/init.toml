@@ -11,8 +11,9 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "gruvbox"
+    colorscheme = "everforest"
     sidebar_width = 40
+    colorscheme_bg = "dark"
 
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
@@ -35,6 +36,19 @@
     relativenumber = false
     enable_cursorline = true
     enable_cursorcolumn = true
+
+[[layers]]
+name = "colorscheme"
+
+[[custom_plugins]]
+name = "catppuccin/nvim"
+flavour = "frappe"
+
+[[custom_plugins]]
+name = "NLKNguyen/papercolor-theme"
+
+[[custom_plugins]]
+name = "neanias/everforest-nvim"
 
 # Enable autocomplete layer
 [[layers]]

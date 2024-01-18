@@ -1,4 +1,6 @@
 function! myspacevim#before() abort
+"  let g:spacevim_disabled_plugins = ['vim-startify']
+
   set ignorecase
   let g:mapleader = ';'
 
@@ -35,6 +37,13 @@ function! myspacevim#before() abort
   let g:pydocstring_doq_path = "doq"
   let g:pydocstring_formatter = "google"
 
+  let g:copilot_filetypes = {
+    \ 'xml': v:true,
+    \ 'pddl': v:true,
+    \ 'pdsketch': v:true,
+    \ 'markdown': v:true,
+  \ }
+
   fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -45,6 +54,16 @@ function! myspacevim#before() abort
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
   augroup END
+
+  function! s:agsearch(query, ...)
+    let query = empty(a:query) ? '^(?=.)' : a:query
+    let args = copy(a:000)
+    let command = '-G ".*\.(c|cc|cpp|h|hpp|py|pdsketch)$" -- ' . fzf#shellescape(query)
+    " return call('fzf#vim#grep', ['ag --nogroup --column --color '.command, args])
+    return call('fzf#vim#ag_raw', insert(args, command, 0))
+  endfunction
+  command! -bang -nargs=* AgSearch call s:agsearch(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+  " command! -bang -nargs=* AgSearch call s:agsearch(<q-args>,fzf#vim#with_preview(),<bang>0)
 endfunction
 
 function! myspacevim#after() abort
@@ -56,9 +75,11 @@ function! myspacevim#after() abort
     autocmd!
     autocmd FileType fzf setlocal nonumber norelativenumber
   augroup END
-  nnoremap <silent> <C-p> :Files<cr>
-  nnoremap <silent> <C-j> :GFiles<cr>
+  nnoremap <silent> <C-o> :Files<cr>
+  nnoremap <silent> <C-p> :GFiles<cr>
   nnoremap <silent> <C-t> :Tags<cr>
+  nnoremap <silent> <C-k> :AgSearch<cr>
+  nnoremap <silent> <C-j> :BLines<cr>
   nnoremap <silent> <C-f> :call SpaceVim#lsp#references()<cr>
 endfunction
 

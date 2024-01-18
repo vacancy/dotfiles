@@ -16,6 +16,7 @@ export LC_ALL=en_US.UTF-8
 # For homebrew
 export PATH=/usr/local/sbin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin":$PATH
+export PATH="/Applications/Sublime Merge.app/Contents/SharedSupport/bin":$PATH
 
 # For local python packages
 export PATH=$HOME/.local/bin:$PATH
@@ -27,7 +28,7 @@ export GEM_HOME="$HOME/Workspace/Gem"
 export PATH=$HOME/Projects/Go/bin:$PATH
 
 # NLTK
-export NLTK_DATA=$HOME/Workspace/nltk_data
+export NLTK_DATA=$HOME/Workspace/datasets/nltk_data
 
 export PYTHONPATH=$HOME/Projects/Jacinle:$PYTHONPATH
 export PYTHONPATH=$HOME/Projects/Concepts:$PYTHONPATH

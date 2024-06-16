@@ -41,7 +41,10 @@ function! myspacevim#before() abort
     \ 'xml': v:true,
     \ 'pddl': v:true,
     \ 'pdsketch': v:true,
+    \ 'pd3': v:true,
+    \ 'cdl': v:true,
     \ 'markdown': v:true,
+    \ 'grammar': v:true,
   \ }
 
   fun! TrimWhitespace()

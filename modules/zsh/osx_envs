@@ -18,18 +18,18 @@ export PATH=/usr/local/sbin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin":$PATH
 export PATH="/Applications/Sublime Merge.app/Contents/SharedSupport/bin":$PATH
 
-# For local python packages
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/Projects/Jacinle/bin:$PATH
-
-# GO related
+# GO and Ruby related
 export GOPATH=$HOME/Projects/Go
-export GEM_HOME="$HOME/Workspace/Gem"
 export PATH=$HOME/Projects/Go/bin:$PATH
+export GEM_HOME="$HOME/Projects/Gem"
 
 # NLTK
 export NLTK_DATA=$HOME/Workspace/datasets/nltk_data
 
+# For local python packages
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/Projects/Jacinle/bin:$PATH
+export PATH=$HOME/Projects/Concepts/bin:$PATH
 export PYTHONPATH=$HOME/Projects/Jacinle:$PYTHONPATH
 export PYTHONPATH=$HOME/Projects/Concepts:$PYTHONPATH
 

@@ -11,7 +11,7 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "everforest"
+    colorscheme = "gruvbox"
     sidebar_width = 40
     colorscheme_bg = "dark"
 

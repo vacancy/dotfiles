@@ -86,3 +86,5 @@ function! myspacevim#after() abort
   nnoremap <silent> <C-f> :call SpaceVim#lsp#references()<cr>
 endfunction
 
+au BufRead,BufNewFile *.cdl set filetype=cdl | setlocal shiftwidth=2 tabstop=2 expandtab
+

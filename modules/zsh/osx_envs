@@ -13,6 +13,14 @@ export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 export LC_ALL=en_US.UTF-8
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+bindkey -e
+bindkey '\e\e[C' forward-word
+bindkey '\e\e[D' backward-word
+
 # For homebrew
 export PATH=/usr/local/sbin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin":$PATH
@@ -25,6 +33,7 @@ export GEM_HOME="$HOME/Projects/Gem"
 
 # NLTK
 export NLTK_DATA=$HOME/Workspace/datasets/nltk_data
+export OPEN3D_DATA_ROOT=$HOME/Workspace/datasets/open3d_data
 
 # For local python packages
 export PATH=$HOME/.local/bin:$PATH
@@ -32,6 +41,12 @@ export PATH=$HOME/Projects/Jacinle/bin:$PATH
 export PATH=$HOME/Projects/Concepts/bin:$PATH
 export PYTHONPATH=$HOME/Projects/Jacinle:$PYTHONPATH
 export PYTHONPATH=$HOME/Projects/Concepts:$PYTHONPATH
+
+# For Homebrew
+
+export CPATH=/opt/homebrew/include:$CPATH
+export LIBRARY_PATH=/opt/homebrew/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/homebrew/lib:$LD_LIBRARY_PATH
 
 alias ls="gls --color=tty -h --group-directories-first"
 alias mosh="mosh --experimental-remote-ip=remote"

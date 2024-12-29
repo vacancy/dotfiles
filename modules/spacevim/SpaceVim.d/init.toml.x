@@ -1,6 +1,6 @@
 #=============================================================================
-# dark_powered.toml --- dark powered configuration example for SpaceVim
-# Copyright (c) 2016-2023 Wang Shidong & Contributors
+# basic.toml --- basic configuration example for SpaceVim
+# Copyright (c) 2016-2022 Wang Shidong & Contributors
 # Author: Wang Shidong < wsdjeg@outlook.com >
 # URL: https://spacevim.org
 # License: GPLv3
@@ -8,35 +8,47 @@
 
 # All SpaceVim option below [option] section
 [options]
-  colorscheme = "everforest"
-  colorscheme_bg = "dark"
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "gruvbox"
+    sidebar_width = 40
+    colorscheme_bg = "dark"
 
-  # Disable guicolors in basic mode, many terminal do not support 24bit true colors
-  enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "nil"
+    statusline_iseparator = "bar"
+    buffer_index_type = 4
+    windows_index_type = 3
+    enable_tabline_filetype_icon = false
+    enable_statusline_mode = false
+    statusline_unicode = false
 
-  # Disable statusline separator, if you want to use other value, please install nerd fonts
-  statusline_separator = "arrow"
-  statusline_iseparator = "arrow"
-  buffer_index_type = 4
-  enable_tabline_filetype_icon = true
-  enable_statusline_mode = false
+    # Enable vim compatible mode, avoid changing origin vim key bindings
+    bootstrap_before = 'myspacevim#before'
+    bootstrap_after = 'myspacevim#after'
+    snippet_engine = "ultisnips"
 
-  sidebar_width = 40
+    enable_filetree_gitstatus = true
+    filetree_direction = "left"
 
-  bootstrap_before = 'myspacevim#before'
-  bootstrap_after = 'myspacevim#after'
-  snippet_engine = "ultisnips"
-
-  enable_filetree_gitstatus = true
-  filetree_direction = "left"
-
-  relativenumber = false
-  enable_cursorline = true
-  enable_cursorcolumn = true
-
+    relativenumber = false
+    enable_cursorline = true
+    enable_cursorcolumn = true
 
 [[layers]]
 name = "colorscheme"
+
+[[custom_plugins]]
+name = "catppuccin/nvim"
+flavour = "frappe"
+
+[[custom_plugins]]
+name = "NLKNguyen/papercolor-theme"
+
+[[custom_plugins]]
+name = "neanias/everforest-nvim"
 
 # Enable autocomplete layer
 [[layers]]
@@ -65,16 +77,7 @@ default_height = 30
 [[layers]]
 name = "lang#python"
 python_interpreter = "/Users/jiayuanm/miniforge3/envs/summer2024/bin/python"
-enabled_linters = ['python', 'pylint']
 enable_typeinfo = true
-# Set the header to empty
-python_file_head = []
-
-[[layers]]
-name = "lang#markdown"
-
-[[layers]]
-name = "treesitter"
 
 [[layers]]
 name = "tools"
@@ -83,12 +86,12 @@ name = "tools"
 name = 'lsp'
 enabled_clients = ['pylsp']
 
-[[layers]]
-name = "checkers"
-lint_on_the_fly = true
-
 [[custom_plugins]]
 repo = "https://github.com/github/copilot.vim"
+merged = false
+
+[[custom_plugins]]
+repo = "https://github.com/rose-pine/neovim"
 merged = false
 
 [[custom_plugins]]
@@ -109,9 +112,5 @@ merged = false
 
 [[custom_plugins]]
 repo = "https://github.com/junegunn/fzf.vim"
-merged = false
-
-[[custom_plugins]]
-repo = "https://github.com/sainnhe/everforest"
 merged = false
 

@@ -8,12 +8,13 @@
 
 import os.path as osp
 import platform
+import subprocess
 
 from .logging import get_logger
 
 logger = get_logger(__file__)
 
-__all__ = ['Filter', 'PlatformFilter', 'OSXFilter', 'LinuxFilter', 'NotExists', 'ConditionalCallable']
+__all__ = ['Filter', 'PlatformFilter', 'OSXFilter', 'LinuxFilter', 'TMUXVersionFilter', 'NotExists', 'ConditionalCallable']
 
 
 class Filter(object):
@@ -43,6 +44,20 @@ class OSXFilter(PlatformFilter):
 class LinuxFilter(PlatformFilter):
     def __init__(self):
         super(LinuxFilter, self).__init__('Linux')
+
+
+class TMUXVersionFilter(Filter):
+    def __init__(self, major_version):
+        self.major_version = major_version
+
+    def eval(self):
+        try:
+            out = subprocess.check_output(['tmux', '-V']).decode('utf-8').strip()
+            version_str = out.split(' ')[1]
+            version = int(version_str.split('.')[0])
+            return version == self.major_version
+        except Exception:
+            return False
 
 
 class NotExists(Filter):

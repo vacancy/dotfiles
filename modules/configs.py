@@ -46,7 +46,8 @@ __mappings__ = mappings.FSMappings(
     ),
     mappings.FSMappings(
         'tmux',
-        mappings.Link('tmux.conf', '.tmux.conf'),
+        mappings.Link('tmux.conf', '.tmux.conf', filters=[filters.TMUXVersionFilter(2)]),
+        mappings.Link('tmux.3.conf', '.tmux.conf', filters=[filters.TMUXVersionFilter(3)]),
         desc='Config tmux.'
     ),
     mappings.FSMappings(

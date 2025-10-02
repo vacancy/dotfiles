@@ -18,6 +18,11 @@ else:
         mappings.Link('SpaceVim.d', '.SpaceVim.d'),
         desc='Config spacevim.'
     )
+    spacevim_installation = commands.Commands(
+        'spacevim',
+        commands.Command('spacevim/install.sh', desc='Install spacevim.'),
+        desc='Install spacevim.'
+    )
 
 
 __mappings__ = mappings.FSMappings(
@@ -89,6 +94,7 @@ __commands__ = commands.Commands(
     commands.Command('zsh/install.sh', desc='Install oh-my-zsh.'),
     commands.Command('fzf/install.sh', desc='Install fzf.'),
     commands.Command('autojump/install.sh', desc='Install autojump.'),
+    *[spacevim_installation] if not dfm.args.plain_vim else [],
 
     commands.Command('echo Hello world!'),
 )

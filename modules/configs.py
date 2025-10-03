@@ -19,7 +19,7 @@ else:
         desc='Config spacevim.'
     )
     spacevim_installation = commands.Commands(
-        'spacevim',
+        '',
         commands.Command('spacevim/install.sh', desc='Install spacevim.'),
         desc='Install spacevim.'
     )

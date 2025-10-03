@@ -8,7 +8,7 @@
 
 set -e -x
 
-git clone https://spacevim.org/git/repos/SpaceVim/ ~/.SpaceVim
+git clone https://github.com/wsdjeg/SpaceVim ~/.SpaceVim
 
 # Backup existing vim and nvim configurations
 # mv ~/.vimrc ~/.vimrc_back
@@ -25,9 +25,9 @@ ln -s ~/.SpaceVim ~/.vim
 ln -s ~/.SpaceVim ~/.config/nvim
 
 # If pip exists. Install neovim and python-lsp-server
-if command -v pip3 &> /dev/null
+if command -v pip &> /dev/null
 then
-  pip3 install --user neovim python-lsp-server
+  pip install --user neovim python-lsp-server
 fi
 
 # If nvm exists, use 22

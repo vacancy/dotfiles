@@ -18,8 +18,7 @@ then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     nvm install 22
 
-    # apt-get install python2.7-dev python3-dev --yes
-    # apt-get install python-setuptools python3-setuptools --yes
+    apt-get install python3-dev --yes
     exit 0
 fi
 

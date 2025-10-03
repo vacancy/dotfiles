@@ -27,11 +27,12 @@ ln -s ~/.SpaceVim ~/.config/nvim
 # If pip exists. Install neovim and python-lsp-server
 if command -v pip &> /dev/null
 then
-  pip install --user neovim python-lsp-server
+  pip install neovim python-lsp-server
 fi
 
 # If nvm exists, use 22
-if command -v nvm &> /dev/null
+# Note that nvm is actually a shell function, so we need to check it with which
+if which nvm &> /dev/null
 then
   nvm install 22
   nvm use 22

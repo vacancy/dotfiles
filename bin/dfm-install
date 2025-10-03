@@ -10,6 +10,8 @@
 import sys
 import os.path as osp
 import argparse
+import importlib.util
+import importlib.machinery
 
 parser = argparse.ArgumentParser('DFM-Install')
 parser.add_argument('--prefix', default=osp.expanduser('~'))
@@ -23,12 +25,22 @@ args.module_dir = osp.join(args.root_dir, 'modules')
 sys.path.insert(0, args.root_dir)
 
 
+def load_source(modname, filename):
+    loader = importlib.machinery.SourceFileLoader(modname, filename)
+    spec = importlib.util.spec_from_file_location(modname, filename, loader=loader)
+    module = importlib.util.module_from_spec(spec)
+    # The module is always executed and not cached in sys.modules.
+    # Uncomment the following line to cache the module.
+    # sys.modules[module.__name__] = module
+    loader.exec_module(module)
+    return module
+
+
 def load_config():
     import dfm
     dfm.args = args
 
-    import imp
-    return imp.load_source('configs', osp.join(args.module_dir, 'configs.py'))
+    return load_source('configs', osp.join(args.module_dir, 'configs.py'))
 
 
 def main():

@@ -91,9 +91,9 @@ lint_on_the_fly = true
 repo = "https://github.com/github/copilot.vim"
 merged = false
 
-[[custom_plugins]]
-repo = "https://github.com/honza/vim-snippets"
-merged = false
+# [[custom_plugins]]
+# repo = "https://github.com/honza/vim-snippets"
+# merged = false
 
 [[custom_plugins]]
 repo = "https://github.com/aperezdc/vim-template"

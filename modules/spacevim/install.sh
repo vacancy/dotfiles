@@ -9,6 +9,8 @@
 set -e -x
 
 git clone https://github.com/wsdjeg/SpaceVim ~/.SpaceVim
+cd ~/.SpaceVim
+git checkout v2.3.0  # Use this specific version for Copilot support
 
 # Backup existing vim and nvim configurations
 # mv ~/.vimrc ~/.vimrc_back

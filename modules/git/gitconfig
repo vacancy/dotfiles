@@ -4,7 +4,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  editor = nano
+  editor = vim
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
   pager = delta

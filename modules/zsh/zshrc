@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
 HISTFILESIZE=1000000
-HISTFILE=$HOME/.config/.zsh_history
+HISTFILE=$HOME/.config/zsh_history
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${ZSH_VERSION}"
 # Speeds up load time

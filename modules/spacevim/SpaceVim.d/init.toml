@@ -64,7 +64,7 @@ default_height = 30
 
 [[layers]]
 name = "lang#python"
-python_interpreter = "/Users/jiayuanm/miniforge3/envs/summer2024/bin/python"
+python_interpreter = "/Users/jiayuanm/.venv/bin/python"
 enabled_linters = ['python', 'pylint']
 enable_typeinfo = true
 # Set the header to empty

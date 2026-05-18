@@ -1,12 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
-HISTFILESIZE=1000000
 HISTFILE=$HOME/.config/zsh_history
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump-${ZSH_VERSION}"
 # Speeds up load time
 DISABLE_UPDATE_PROMPT=true
+
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # Perform compinit only once a day.
 autoload -Uz compinit

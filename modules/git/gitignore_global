@@ -1,6 +1,8 @@
 # Adapted from https://github.com/cowboy/dotfiles/blob/master/link/.gitignore_global
 # Adatped from https://github.com/wookayin/dotfiles/blob/master/git/gitignore#L14
 
+tags
+
 # Compiled source #
 *.class
 *.dll
